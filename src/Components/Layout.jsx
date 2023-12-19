@@ -1,8 +1,11 @@
 import {Form} from './Form'
+import './../../src/App.css'
 export const Layout = () => {
   return (
     <>
-        <Form/>
+    <div className="container">
+      <Form/>
+    </div>
     </>
   )
 }

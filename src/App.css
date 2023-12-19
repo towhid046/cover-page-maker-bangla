@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.container{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+label{
+    font-size: 20px;
+}
+input, select{
+    padding: 10px 14px ;
+    border-radius: 5px;
+    border: none;
+    /* outline: none; */
+    border: 1px solid #2b9b95;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 90%;
+    margin: 5px 0 18px 0;
+}
+.form_wrapper{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 30px;
+}
+.submit_btn_wrapper{
+    text-align: center;
+    margin: 20px 0;
+}
+.submit_btn{
+    padding: 10px 14px;
+    border: none;
+    color: #fff;
+    background: #112035;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    transition: .4s;
+}
+.text_center{
+    text-align: center;
+}
+
+
+
+.versity_name{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2b9b95;
+}
+.logo_wrapper img{
+    width: 100px;
+}
+.department_name{
+    font-size: 30px;
+}
+.assignmen_title{
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 30px 0;
+    color: #3bc742e7;
+}
+
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 30px 0;
+}
+.box{
+    border: 2px solid #3bc742e7;
+    border-radius: 0 20px 0 20px;
+    font-size: 16px;
+    padding: 30px;
+    width: 50%;
+    font-weight: bold;
+}
+.box_content{
+    margin: 15px 0 30px 0;
+    transform: translateX(25px);
+}
+.box_content p{
+    margin-bottom: 10px;
+}
+
+.submit_date{
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 40px;
+    font-size: 18px;
+}
+.submit_date span{
+    color: #2b9b95;
+}
+.course_info p{
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.submit_btn:hover{
+    color: #fafafa;
+    background-color: #091a19;
+}
+.cover_page_wrapper{
+    width: 100%;
+    padding:100px ;
+    background-color: #eceaea;
+}
+
+@media (max-width:840px) {
+    .form_wrapper{
+        grid-template-columns: 100%;
+    }
+}

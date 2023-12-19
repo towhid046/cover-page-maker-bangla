@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react"
 import { Page } from "./Page"
 
@@ -5,7 +6,7 @@ export const Form = () => {
     const [versityName, setVersityName] = useState('')
     const [departmentName, setDepartmentName] = useState('')
     const [assignmentTitle, setAssignmentTitle] = useState('')
-    const [courseCode, setCourseCode] = useState('')
+    const [courseCode, setCourseCode] = useState(null)
     const [year, setYear] = useState('')
     const [semester, setSemester] = useState('')
 
@@ -52,18 +53,20 @@ export const Form = () => {
   return (
     <>
     <form onSubmit={formSubmitHandelar} action="">
+        
+    <div className="form_wrapper ">
+    <div className="universityInfo">
         {/* versity name */}
+        <h2>University Information:</h2>
         <label htmlFor="">
         University Name: <br />
         <input 
         type="text" 
+        value={'Bangabandhu Sheikh Mujibur Rahman Science and Technonogy University, Gopalganj - 8100'}
         placeholder="University name" 
         onChange={(e)=>setVersityName(e.target.value)}
         /> <br />
         </label>
-
-        {/* logo */}
-        <img src="" alt="Logo" /> <br />
 
         {/* department name */}
         <label htmlFor="">
@@ -71,7 +74,7 @@ export const Form = () => {
         <select 
         onChange={(e)=>setDepartmentName(e.target.value)}
         name="" id="">
-            <option value="">Select your department</option>
+            <option value="">Select department</option>
 
             <option
             value="Public Administration"
@@ -155,8 +158,19 @@ export const Form = () => {
                 </option>
             </select>
         </label> <br />
+        <label htmlFor="">
+            Date of submission: <br />
+            <input 
+            type="date" 
+            onChange={(e)=>setSubmissionDate(e.target.value)}
+            />
+        </label> <br />
 
-{/* Student information */}
+    </div>
+        
+
+    <div className="student_teacher_info">
+        {/* Student information */}
         <div className="student_info">
             <h2>Your info:</h2>
             {/* your name */}
@@ -235,16 +249,12 @@ export const Form = () => {
                 />
             </label> <br />
         </div>
+    </div>
+    </div>
+        <div className="submit_btn_wrapper">
+        <button className="submit_btn">Submit</button>
 
-        <label htmlFor="">
-            Date of submission: <br />
-            <input 
-            type="date" 
-            onChange={(e)=>setSubmissionDate(e.target.value)}
-            />
-        </label> <br />
-
-        <button>Submit</button>
+        </div>
     </form>
 {/* Send data to Page component */}
     <Page key={crypto.randomUUID()} formData={formData} />
