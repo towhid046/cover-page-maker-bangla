@@ -19,15 +19,16 @@ const {
     teacherTitle,
     teacherDepartment,
     submissionDate,
-} = formData
+} = formData;
+
   return (
     <>
     {
-        courseCode !== null ? 
+        courseCode === undefined ? 
         <h2>Your cover page appare here</h2>
         :
         <div className="cover_page_wrapper">
-            <h1 className='text_center versity_name'> Bangabandhu Sheikh Mujibur Rahman Science and Technonogy University, Gopalganj - 8100 </h1>
+            <h1 className='text_center versity_name'> {versityName}</h1>
             <div className="text_center logo_wrapper">
             <img src={logo} alt="Logo" /> <br />
             </div>
