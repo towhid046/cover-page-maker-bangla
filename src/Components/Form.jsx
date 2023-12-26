@@ -1,7 +1,11 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-const-assign */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { Page } from "./Page";
+
+import { data } from './../database/universitiesName';
+const {universities, departments, years, teacherTitles} = data
 
 export const Form = () => {
   const [versityName, setVersityName] = useState("");
@@ -28,6 +32,7 @@ export const Form = () => {
   // handel form submit:
   const formSubmitHandelar = (event) => {
     event.preventDefault();
+    console.dir(event.target)
     setFormData({
       versityName,
       departmentName,
@@ -58,17 +63,17 @@ export const Form = () => {
             <h2>University Information:</h2>
             <label htmlFor="">
               University Name: <br />
-              <input
-                required
-                type="text"
-                onChange={(e)=> setVersityName(e.target.value)}
-                // value={
-                //   "Bangabandhu Sheikh Mujibur Rahman Science and Technonogy University, Gopalganj - 8100"
-                // }
-                placeholder="University name"
-              />{" "}
-              <br />
+              <select 
+              required
+              onChange={(e)=> setVersityName(e.target.value)}
+              >
+                <option  className="color_gray" >Choose your varsity</option>
+                {
+                  universities.map(varsity=><option value={`${varsity.name}, ${varsity.location}-${varsity.zipCode}`} >{varsity.name}, {varsity.location}-{varsity.zipCode}</option>)
+                }
+              </select>
             </label>
+
             {/* department name */}
             <label htmlFor="">
               Department: <br />
@@ -78,14 +83,14 @@ export const Form = () => {
                 name=""
                 id=""
               >
-                <option value="">Select department</option>
-                <option value="Public Administration">
-                  Public Administration
-                </option>
-                <option value="Computer Science">Computer Science</option>
+                <option className="color_gray">Your department name</option>
+                {
+                  departments.map(department=> <option value={department.name}>{department.name}</option>)
+                }
               </select>
             </label>{" "}
             <br />
+
             {/* topic name */}
             <label htmlFor="">
               Assignment Title: <br />
@@ -97,6 +102,7 @@ export const Form = () => {
               />
             </label>{" "}
             <br />
+
             {/* course code */}
             <label htmlFor="">
               Course code: <br />
@@ -108,6 +114,7 @@ export const Form = () => {
               />
             </label>{" "}
             <br />
+
             {/* year */}
             <label htmlFor="">
               Year: <br />
@@ -117,11 +124,10 @@ export const Form = () => {
                 name=""
                 id=""
               >
-                <option value="">Year</option>
-                <option value="1st">1st</option>
-                <option value="2nd">2nd</option>
-                <option value="3rd">3rd</option>
-                <option value="4th">4th</option>
+                <option className="color_gray">Year</option>
+               {
+                years.map(year => <option value={year}>{year}</option>)
+               }
               </select>
             </label>{" "}
             <br />
@@ -134,7 +140,7 @@ export const Form = () => {
                 name=""
                 id=""
               >
-                <option value="">Semester</option>
+                <option className="color_gray">Semester</option>
                 <option value="1st">1st</option>
                 <option value="2nd">2nd</option>
               </select>
@@ -167,7 +173,6 @@ export const Form = () => {
                 />{" "}
                 <br />
               </label>{" "}
-              <br />
 
               {/* your id: */}
               <label htmlFor="">
@@ -180,15 +185,20 @@ export const Form = () => {
                 />{" "}
                 <br />
               </label>
+
               {/* student Departemnt name */}
               <label htmlFor="">
                 Department: <br />
-                <input
-                  required
-                  type="text"
-                  placeholder="Department name"
-                  onChange={(e) => setStudentDepartment(e.target.value)}
-                />
+                <select 
+                required
+                placeholder="Department name"
+                onChange={(e) => setStudentDepartment(e.target.value)}
+                >
+                  <option className="color_gray">Your department</option>
+                  {
+                    departments.map(department=> <option value={department.name}>{department.name}</option>)
+                  }
+                </select>
               </label>
             </div>
 
@@ -205,15 +215,15 @@ export const Form = () => {
                 />{" "}
                 <br />
               </label>
-              <br />
 
               {/* Teacher title: */}
               <label htmlFor="">
                 Teacher's Title: <br />
                 <select required onChange={(e) => setTeacherTitle(e.target.value)} name="" id="">
-                  <option value="">Select teacher title</option>
-                  <option value="Assistant Professor">Assistant Professor</option>
-                  <option value="Lecturer">Lecturer</option>
+                  <option className="color_gray">Teacher's title</option>
+                 {
+                  teacherTitles.map(teacherTitle => <option value={`${teacherTitle},`}>{teacherTitle}</option>)
+                 }
                 </select>
                 <br />
               </label>
@@ -221,12 +231,15 @@ export const Form = () => {
               {/* Techer Departemnt name */}
               <label htmlFor="">
                 Teacher's Department: <br />
-                <input
-                  required
-                  type="text"
-                  placeholder="Department name"
-                  onChange={(e) => setTeacherDepartmen(e.target.value)}
-                />
+                <select 
+                required
+                onChange={(e) => setTeacherDepartmen(e.target.value)}
+                >
+                  <option className="color_gray">Teacher's department</option>
+                  {
+                    departments.map(department=> <option value={department.name}>{department.name}</option>)
+                  }
+                </select>
               </label>{" "}
               <br />
             </div>

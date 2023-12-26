@@ -5,6 +5,7 @@
 }
 body{
     font-family: sans-serif;
+    background-color: #ffffff;
 }
 .container{
     max-width: 1200px;
@@ -22,12 +23,17 @@ input, select{
     padding: 10px 14px ;
     border-radius: 5px;
     border: none;
-    /* outline: none; */
-    border: 1px solid #2b9b95;
+    outline: none;
+    border: 1px solid  rgba(3, 102, 214, 0.3) ;
+
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 90%;
     margin: 5px 0 18px 0;
+}
+input:focus, select:focus{
+    box-shadow: rgba(1, 102, 214, 0.3) 0px 0px 0px 2px;
+    border: 1px solid  rgba(3, 102, 214, 0.3) ;
 }
 .form_wrapper{
     display: grid;
@@ -53,62 +59,76 @@ input, select{
 .text_center{
     text-align: center;
 }
-
-
-
+/* cover page css */
+.cover_page_wrapper{
+    margin: 50px auto;
+    width: 795.276px;
+    padding:110px 84px 110px 84px;
+    background-color: #ffffff;    
+}
+/* versity name css */
 .versity_name{
-    font-size: 40px;
+    font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #2b9b95;
+    color: #2b6e9bf1;
 }
+/* logo css */
 .logo_wrapper img{
-    width: 100px;
+    width: 130px;
+    margin: 28px 0;
 }
+/* department name css */
 .department_name{
-    font-size: 30px;
+    font-size: 22px;
 }
+/* assignment title css */
 .assignmen_title{
-    font-size: 36px;
+    font-size: 26px;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 30px 0;
-    color: #3bc742e7;
+    margin: 32px 0;
+    color: #91c462e7;
 }
 
+/* teacher and student info css */
 .boxes{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    margin: 30px 0;
+    gap: 5%;
+    margin: 32px 0;
 }
 .box{
-    border: 2px solid #3bc742e7;
-    border-radius: 0 20px 0 20px;
-    font-size: 16px;
-    padding: 30px;
+    border: 2px solid #d8a43be5;
+    border-radius: 0 25px 0 25px;
+    font-size: 18px;
+    padding: 42px 32px 50px 32px;
     width: 50%;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 .box_content{
-    margin: 15px 0 30px 0;
+    margin-top: 20px;
     transform: translateX(25px);
 }
+
 .box_content p{
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
+/* submit date css */
 .submit_date{
     font-weight: bold;
     font-style: italic;
-    margin-top: 40px;
-    font-size: 18px;
+    margin-top: 80px;
+    font-size: 16px;
 }
 .submit_date span{
-    color: #2b9b95;
+    color: #46aaa5ec;
 }
+
 .course_info p{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 8px;
     font-weight: bold;
 }
@@ -116,14 +136,44 @@ input, select{
     color: #fafafa;
     background-color: #091a19;
 }
-.cover_page_wrapper{
-    width: 100%;
-    padding:100px ;
-    background-color: #eceaea;
+
+.cover_page_appear_text{
+    padding: 20px;
+}
+
+
+.color_gray{
+    color: gray;
+}
+
+.download_btn{
+    color: #fff;
+    background-color: #000000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    font-size: 18px;
+    cursor: pointer;
+}
+.cover_page_parent{
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    max-width: 855px;
+    margin-inline: auto;
 }
 
 @media (max-width:840px) {
     .form_wrapper{
         grid-template-columns: 100%;
     }
+    .universityInfo{
+        text-align: center;
+    }
+    .student_teacher_info{
+        text-align: center;
+    }
+
 }
