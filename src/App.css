@@ -161,7 +161,7 @@ input:focus, select:focus{
 .cover_page_parent{
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    max-width: 855px;
+    width: 855px;
     margin-inline: auto;
 }
 
