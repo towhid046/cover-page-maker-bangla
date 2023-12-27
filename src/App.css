@@ -175,5 +175,8 @@ input:focus, select:focus{
     .student_teacher_info{
         text-align: center;
     }
+    .cover_page_parent{
+        width: 855px;
+    }
 
 }
