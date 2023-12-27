@@ -165,7 +165,7 @@ input:focus, select:focus{
     margin-inline: auto;
 }
 
-/* @media (max-width:840px) {
+@media (max-width:840px) {
     .form_wrapper{
         grid-template-columns: 100%;
     }
@@ -175,11 +175,5 @@ input:focus, select:focus{
     .student_teacher_info{
         text-align: center;
     }
-    .cover_page_wrapper{
-        margin: 50px auto;
-        width: 795.276px;
-        padding:110px 84px 110px 84px;
-        background-color: #ffffff;    
-    }
-
-} */
+    
+}
