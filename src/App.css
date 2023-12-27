@@ -165,7 +165,7 @@ input:focus, select:focus{
     margin-inline: auto;
 }
 
-@media (max-width:840px) {
+/* @media (max-width:840px) {
     .form_wrapper{
         grid-template-columns: 100%;
     }
@@ -182,4 +182,4 @@ input:focus, select:focus{
         background-color: #ffffff;    
     }
 
-}
+} */
