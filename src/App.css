@@ -161,7 +161,7 @@ input:focus, select:focus{
 .cover_page_parent{
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    width: 855px;
+    max-width: 855px;
     margin-inline: auto;
 }
 
@@ -175,8 +175,11 @@ input:focus, select:focus{
     .student_teacher_info{
         text-align: center;
     }
-    .cover_page_parent{
-        width: 855px;
+    .cover_page_wrapper{
+        margin: 50px auto;
+        width: 795.276px;
+        padding:110px 84px 110px 84px;
+        background-color: #ffffff;    
     }
 
 }
