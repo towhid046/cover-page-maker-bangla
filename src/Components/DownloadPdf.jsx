@@ -9,18 +9,18 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
 
   const downloadPdfDocument = async () => {
     setIsDownloading(true);
-
+  
     try {
       const input = document.getElementById(rootElementId);
       if (!input) {
         console.error(`Element with ID '${rootElementId}' not found.`);
         return;
       }
-
-      const canvas = await html2canvas(input);
+  
+      const canvas = await html2canvas(input, { scale: 2 }); // Adjust the scale
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      pdf.addImage(imgData, "JPEG", 0, 0);
+      const pdf = new jsPDF("p", "mm", "a4"); // Specify page size
+      pdf.addImage(imgData, "JPEG", 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
       pdf.save(`${downloadFileName}.pdf`);
     } catch (error) {
       console.error("Error generating PDF:", error);
@@ -28,6 +28,7 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
       setIsDownloading(false);
     }
   };
+  
 
   return (
     <button
