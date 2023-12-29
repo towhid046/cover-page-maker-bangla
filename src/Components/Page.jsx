@@ -9,6 +9,7 @@ export const Page = ({ formData }) => {
     versityName,
     departmentName,
     assignmentTitle,
+    couseName,
     courseCode,
     year,
     semester,
@@ -26,7 +27,7 @@ export const Page = ({ formData }) => {
   return (
     <div className="cover_page_parent">
       {courseCode === undefined ? (
-       <div className="cover_page_appear_text"> <h2 className="" >Your cover page will appare here</h2></div>
+       <div className="cover_page_appear_text"> <h2 className="" >Your cover page will appear here</h2></div>
       ) : (
         <div id="testId" className="cover_page_wrapper">
           <h1 className="text_center versity_name"> {versityName}</h1>
@@ -39,7 +40,7 @@ export const Page = ({ formData }) => {
           </h3>
 
           <div className="course_info">
-            <p>Course Title: {assignmentTitle}</p>
+            <p>Course Title: {couseName}</p>
             <p>Course Code: {courseCode}</p>
             <p>Year: {year}</p>
             <p>Semester: {semester}</p>
