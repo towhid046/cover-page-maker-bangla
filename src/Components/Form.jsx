@@ -66,7 +66,7 @@ export const Form = () => {
                 <option className="color_gray">Choose your varsity</option>
                 {universities.map((varsity) => (
                   <option
-                    value={`${varsity.name}, ${varsity.location}-${varsity.zipCode}`}
+                    value={`${varsity.name}, ${varsity.location}- ${varsity.zipCode}`}
                   >
                     {varsity.name}, {varsity.location}-{varsity.zipCode}
                   </option>
