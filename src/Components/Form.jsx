@@ -8,50 +8,26 @@ import { data } from "./../database/universitiesName";
 const { universities, departments, years, teacherTitles } = data;
 
 export const Form = () => {
-  const [versityName, setVersityName] = useState("");
-  const [departmentName, setDepartmentName] = useState("");
-  const [assignmentTitle, setAssignmentTitle] = useState("");
-  const [couseName, setcouseName] = useState(undefined);
-  const [courseCode, setCourseCode] = useState(undefined);
-  const [year, setYear] = useState("");
-  const [semester, setSemester] = useState("");
 
-  const [studentName, setStudentName] = useState("");
-  const [studentId, setStudentId] = useState("");
-  const [studentDepartment, setStudentDepartment] = useState("");
-
-  const [teacherName, setTeacherName] = useState("");
-  const [teacherTitle, setTeacherTitle] = useState("");
-  const [teacherDepartment, setTeacherDepartmen] = useState("");
-
-  const [submissionDate, setSubmissionDate] = useState("");
-
-  const [formData, setFormData] = useState({});
+  const [pageData, setPageData] = useState([]);
 
   // handel form submit:
   const formSubmitHandelar = (event) => {
     event.preventDefault();
-    console.dir(event.target);
-    setFormData({
-      versityName,
-      departmentName,
-      assignmentTitle,
-      couseName,
-      courseCode,
-      year,
-      semester,
 
-      studentName,
-      studentId,
-      studentDepartment,
-
-      teacherName,
-      teacherTitle,
-      teacherDepartment,
-      submissionDate,
+    const formDatas = {};
+    const elements = [...event.target.elements];
+    elements.forEach((element) => {
+      formDatas[element.name] = element.value;
+      setPageData([...pageData, formDatas]);
     });
+    
+    elements.forEach(element=>{
+      element.tagName === 'SELECT' ? 
+      element.value = element[0].value : element.value = '';
+    })
+    
   };
-  // create object for sending data to Page component
 
   return (
     <>
@@ -62,7 +38,10 @@ export const Form = () => {
             <h2>University Information:</h2>
             <label htmlFor="">
               University Name: <br />
-              <select required onChange={(e) => setVersityName(e.target.value)}>
+              <select
+                name="versityName"
+                required
+              >
                 <option className="color_gray">Choose your varsity</option>
                 {universities.map((varsity) => (
                   <option
@@ -78,8 +57,7 @@ export const Form = () => {
               Department: <br />
               <select
                 required
-                onChange={(e) => setDepartmentName(e.target.value)}
-                name=""
+                name="departmentName"
                 id=""
               >
                 <option className="color_gray">Your department name</option>
@@ -89,6 +67,7 @@ export const Form = () => {
               </select>
             </label>{" "}
             <br />
+
             {/* topic name */}
             <label htmlFor="">
               Assignment Title: <br />
@@ -96,7 +75,7 @@ export const Form = () => {
                 required
                 type="text"
                 placeholder="Assignment title"
-                onChange={(e) => setAssignmentTitle(e.target.value)}
+                name="assignmentTitle"
               />
             </label>{" "}
             <br />
@@ -108,7 +87,7 @@ export const Form = () => {
                 required
                 type="text"
                 placeholder="Course Name"
-                onChange={(e) => setcouseName(e.target.value)}
+                name='courseName'
               />
             </label>{" "}
             <br />
@@ -120,17 +99,17 @@ export const Form = () => {
                 required
                 type="text"
                 placeholder="Course Code"
-                onChange={(e) => setCourseCode(e.target.value)}
+                name="courseCode"
               />
             </label>{" "}
             <br />
+
             {/* year */}
             <label htmlFor="">
               Year: <br />
               <select
                 required
-                onChange={(e) => setYear(e.target.value)}
-                name=""
+                name="year"
                 id=""
               >
                 <option className="color_gray">Year</option>
@@ -140,13 +119,13 @@ export const Form = () => {
               </select>
             </label>{" "}
             <br />
+
             {/* semester */}
             <label htmlFor="">
               Semester: <br />
               <select
                 required
-                onChange={(e) => setSemester(e.target.value)}
-                name=""
+                name="semester"
                 id=""
               >
                 <option className="color_gray">Semester</option>
@@ -155,13 +134,14 @@ export const Form = () => {
               </select>
             </label>{" "}
             <br />
+
             {/* submission Date */}
             <label htmlFor="">
               Date of submission: <br />
               <input
                 required
                 type="date"
-                onChange={(e) => setSubmissionDate(e.target.value)}
+                name="submissionDate"
               />
             </label>{" "}
             <br />
@@ -171,17 +151,18 @@ export const Form = () => {
             {/* Student information */}
             <div className="student_info">
               <h2>Your Information:</h2>
-              {/* your name */}
+              {/* Student name */}
               <label htmlFor="">
                 Student name: <br />
                 <input
                   required
                   type="text"
                   placeholder="Student name"
-                  onChange={(e) => setStudentName(e.target.value)}
+                  name="studentName"
                 />{" "}
                 <br />
               </label>{" "}
+
               {/* your id: */}
               <label htmlFor="">
                 Student Id: <br />
@@ -189,17 +170,19 @@ export const Form = () => {
                   required
                   type="text"
                   placeholder="Student Id"
-                  onChange={(e) => setStudentId(e.target.value)}
+                  name="studentId"
                 />{" "}
                 <br />
+
               </label>
+
               {/* student Departemnt name */}
               <label htmlFor="">
                 Department: <br />
                 <select
                   required
                   placeholder="Department name"
-                  onChange={(e) => setStudentDepartment(e.target.value)}
+                  name="studentDepartment"
                 >
                   <option className="color_gray">Your department</option>
                   {departments.map((department) => (
@@ -218,17 +201,17 @@ export const Form = () => {
                   required
                   type="text"
                   placeholder="Teacher name"
-                  onChange={(e) => setTeacherName(e.target.value)}
+                  name="teacherName"
                 />{" "}
                 <br />
               </label>
+
               {/* Teacher title: */}
               <label htmlFor="">
                 Teacher's Title: <br />
                 <select
                   required
-                  onChange={(e) => setTeacherTitle(e.target.value)}
-                  name=""
+                  name="teacherTitle"
                   id=""
                 >
                   <option className="color_gray">Teacher's title</option>
@@ -238,12 +221,13 @@ export const Form = () => {
                 </select>
                 <br />
               </label>
+
               {/* Techer Departemnt name */}
               <label htmlFor="">
                 Teacher's Department: <br />
                 <select
                   required
-                  onChange={(e) => setTeacherDepartmen(e.target.value)}
+                  name="teacherDepartment"
                 >
                   <option className="color_gray">Teacher's department</option>
                   {departments.map((department) => (
@@ -252,6 +236,7 @@ export const Form = () => {
                 </select>
               </label>{" "}
               <br />
+
             </div>
           </div>
         </div>
@@ -260,8 +245,12 @@ export const Form = () => {
           <button className="submit_btn">Submit</button>
         </div>
       </form>
+
       {/* Send data to Page component */}
-      <Page key={crypto.randomUUID()} formData={formData} />
+      {
+        pageData.map(item=> <Page key={crypto.randomUUID()} item={item}/>)
+      }
+      
     </>
   );
 };
