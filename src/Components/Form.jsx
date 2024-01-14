@@ -19,13 +19,14 @@ export const Form = () => {
     const elements = [...event.target.elements];
     elements.forEach((element) => {
       formDatas[element.name] = element.value;
-      setPageData([...pageData, formDatas]);
+      setPageData([formDatas]);
     });
     
-    elements.forEach(element=>{
-      element.tagName === 'SELECT' ? 
-      element.value = element[0].value : element.value = '';
-    })
+    // clear the form input fild
+    // elements.forEach(element=>{
+    //   element.tagName === 'SELECT' ? 
+    //   element.value = element[0].value : element.value = '';
+    // })
     
   };
 
