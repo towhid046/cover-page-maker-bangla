@@ -56,7 +56,7 @@ export const Page = ({ item }) => {
           />
         </div>
         <p className="text_center submit_date">
-          <span>Date of submission:</span> {submissionDate}
+          <span>Date of submission:</span> {submissionDate.split('-').reverse().join('-')}
         </p>
       </div>
 
