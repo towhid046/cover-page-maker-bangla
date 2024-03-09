@@ -2,6 +2,7 @@
 import "./../../src/App.css";
 import logo from "./../assets/img/logo.png";
 import { BoxInfo } from "./BoxInfo";
+import DateFormater from "./DateFormater";
 import GenericPdfDownloader from "./DownloadPdf";
 
 export const Page = ({ item }) => {
@@ -56,7 +57,7 @@ export const Page = ({ item }) => {
           />
         </div>
         <p className="text_center submit_date">
-          <span>Date of submission:</span> {submissionDate.split('-').reverse().join('-')}
+          <span>Date of submission:</span> <DateFormater submissionDate={submissionDate}/>
         </p>
       </div>
 
