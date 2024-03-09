@@ -11,6 +11,14 @@ export const Form = () => {
 
   const [pageData, setPageData] = useState([]);
 
+  // function for scroll down. it will called after submitting the form
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+  
   // handel form submit:
   const formSubmitHandelar = (event) => {
     event.preventDefault();
@@ -27,7 +35,9 @@ export const Form = () => {
     //   element.tagName === 'SELECT' ? 
     //   element.value = element[0].value : element.value = '';
     // })
-    
+    setTimeout(()=>{
+      scrollToBottom()
+    },100)
   };
 
   return (
