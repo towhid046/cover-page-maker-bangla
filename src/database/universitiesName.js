@@ -1,12 +1,14 @@
+
+
 const universities = [
-    // { name: "University of Dhaka", location: "Dhaka", zipCode: "1000" },
+    { name: "University of Dhaka", location: "Dhaka", zipCode: "1000"},
     // { name: "Bangladesh Agricultural University", location: "Mymensingh", zipCode: "2202" },
     // { name: "Bangladesh University of Engineering and Technology", location: "Dhaka", zipCode: "1205" },
     // { name: "Jahangirnagar University", location: "Savar, Dhaka", zipCode: "1342" },
-    // { name: "Rajshahi University", location: "Rajshahi", zipCode: "6205" },
+    { name: "Rajshahi University", location: "Rajshahi", zipCode: "6205"},
     // { name: "Chittagong University", location: "Chittagong", zipCode: "4331" },
-    // { name: "Khulna University", location: "Khulna", zipCode: "9208" },
-    // { name: "Islamic University, Bangladesh", location: "Kushtia", zipCode: "7003" },
+    { name: "Khulna University", location: "Khulna", zipCode: "9208"},
+    { name: "Islamic University, Bangladesh", location: "Kushtia", zipCode: "7003"},
     // { name: "Shahjalal University of Science and Technology", location: "Sylhet", zipCode: "3100" },
     // { name: "Bangabandhu Sheikh Mujib Medical University", location: "Dhaka", zipCode: "1000" },
     // { name: "Bangladesh Open University", location: "Dhaka", zipCode: "1212" },
@@ -27,7 +29,7 @@ const universities = [
     // { name: "Mawlana Bhashani Science and Technology University", location: "Tangail", zipCode: "2200" },
     // { name: "Sher-e-Bangla Agricultural University", location: "Dhaka", zipCode: "1207" },
     // { name: "Sylhet Agricultural University", location: "Sylhet", zipCode: "3100" },
-    { name: "Bangabandhu Sheikh Mujibur Rahman Science and Technology University", location: "Gopalganj", zipCode: "8100" },
+    { name: "Bangabandhu Sheikh Mujibur Rahman Science and Technology University", location: "Gopalganj", zipCode: "8100"},
     // { name: "Sheikh Hasina University, Netrokona", location: "Netrokona", zipCode: "2400" },
     // { name: "Sheikh Hasina University, Khulna", location: "Khulna", zipCode: "9000" },
     // { name: "Rabindra University, Bangladesh", location: "Kushtia", zipCode: "7000" }

@@ -29,7 +29,6 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
     }
   };
   
-
   return (
     <button
       className="download_btn"
