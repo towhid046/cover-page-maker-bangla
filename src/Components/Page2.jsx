@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
-import bsmrstuLogo from "./../assets/img/logos/8100.png";
-
-// import { BoxInfo } from "./BoxInfo";
 import DateFormater from "./DateFormater";
 
-const Page1 = ({ item }) => {
+const Page1 = ({ item, logo }) => {
   const {
     versityName,
     assignmentTitle,
@@ -27,7 +24,7 @@ const Page1 = ({ item }) => {
     <div>
       <h1 className="text_center versity_name"> {versityName}</h1>
       <div className="text_center logo_wrapper">
-        <img src={bsmrstuLogo} alt="Logo" /> <br />
+        <img src={logo} alt="Logo" /> <br />
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title text_center">
