@@ -8,7 +8,7 @@ const universities = [
     { name: "Rajshahi University", location: "Rajshahi", zipCode: "6205"},
     // { name: "Chittagong University", location: "Chittagong", zipCode: "4331" },
     { name: "Khulna University", location: "Khulna", zipCode: "9208"},
-    { name: "Islamic University, Bangladesh", location: "Kushtia", zipCode: "7003"},
+    { name: "Islamic University", location: "Kushtia", zipCode: "7003"},
     // { name: "Shahjalal University of Science and Technology", location: "Sylhet", zipCode: "3100" },
     // { name: "Bangabandhu Sheikh Mujib Medical University", location: "Dhaka", zipCode: "1000" },
     // { name: "Bangladesh Open University", location: "Dhaka", zipCode: "1212" },

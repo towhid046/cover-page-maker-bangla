@@ -12,10 +12,11 @@ export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
 
   const generateLogo = (imgCode) => {
-    return `./src/assets/img/logos/${parseInt(imgCode)}.png`;
+    return `./src/assets/img/logos/${imgCode}.png`;
   };
 
-  const logo = generateLogo(item.versityName.split("-")[1]);
+  const logo = generateLogo(item.versityName.split(",")[1].split('-')[0].toLowerCase().trim(''));
+  console.log(logo)
 
   const renderPage = (id) => {
     if (id === 1) {
