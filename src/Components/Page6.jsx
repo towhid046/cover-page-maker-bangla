@@ -2,7 +2,8 @@
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
 
-const Page6 = ({ item,logo }) => {
+
+const Page6 = ({ item, logo }) => {
   const {
     versityName,
     assignmentTitle,

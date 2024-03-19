@@ -8,15 +8,14 @@ import Page4 from "./Page4";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
 
+import { generateLogo } from "./utilities/generateLogo";
+
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
 
-  const generateLogo = (imgCode) => {
-    return `./src/assets/img/logos/${imgCode}.png`;
-  };
+  const zipCode = parseInt(item.versityName.split('-')[1])
 
-  const logo = generateLogo(item.versityName.split(",")[1].split('-')[0].toLowerCase().trim(''));
-  console.log(logo)
+  const logo = generateLogo(zipCode)
 
   const renderPage = (id) => {
     if (id === 1) {
@@ -35,11 +34,12 @@ export const CoverPage = ({ item, pageId }) => {
       return <Page5 item={item} logo={logo}  />;
     }
     if (id === 6) {
-      return <Page6 item={item} logo={logo}  />;
+      return <Page6 item={item} />;
     }
   };
 
   return (
+    <>
     <div className="cover_page_parent">
       <div id="testId" className="cover_page_wrapper">
         {renderPage(pageId + 1)}
@@ -52,5 +52,6 @@ export const CoverPage = ({ item, pageId }) => {
         />
       )}
     </div>
+    </>
   );
 };
