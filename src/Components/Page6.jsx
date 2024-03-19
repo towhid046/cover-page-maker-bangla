@@ -23,7 +23,7 @@ const Page6 = ({item, logo, studentSortDeptName, teacherSortDeptName, uniShortNa
 
   return (
     <div>
-      <h1 className="text_center versity_name6"> {versityName}</h1>
+      <h1 className="text_center versity_name6 color6">{versityName}</h1>
       <h2 className="department_name6 text_center">
         Department of {studentDepartment}
       </h2>
@@ -75,7 +75,7 @@ const Page6 = ({item, logo, studentSortDeptName, teacherSortDeptName, uniShortNa
       </div>
 
       <p className="submit_date6 submit_date ">
-        <span>Date of submission:</span>{" "}
+        <span className="color6">Date of submission:</span>{" "}
         <DateFormater submissionDate={submissionDate} />
       </p>
     </div>

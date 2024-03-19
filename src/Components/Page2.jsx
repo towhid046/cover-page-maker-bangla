@@ -22,9 +22,9 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
 
   return (
     <div>
-      <h1 className="text_center versity_name"> {versityName}</h1>
+      <h1 className="text_center versity_name color2">{versityName}</h1>
       <div className="text_center logo_wrapper">
-        <img src={logo} alt="Logo" /> <br />
+        <img src={logo} alt="Logo" /> <br/>
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title assignmen_title2 text_center">
@@ -65,7 +65,7 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
       </div>
 
       <p className="submit_date text_center">
-        <span>Date of submission:</span>{" "}
+        <span className="color2">Date of submission:</span>{" "}
         <DateFormater submissionDate={submissionDate} />
       </p>
     </div>

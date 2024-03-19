@@ -72,7 +72,7 @@ export const CoverPage = ({ item, pageId }) => {
     const targetedItem = logos.find((logo) => logo.id === zip);
     return targetedItem.name;
   };
-  const logo = 'https://gobranddirect.com/cdn/shop/products/Asset2_grande.jpg?v=1619802039'
+  const logo = generateLogo(zipCode)
 
   // get sorter dept name:
   const studentSortDeptName = sorterDepartment(item.studentDepartment);

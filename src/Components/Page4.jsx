@@ -22,7 +22,7 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
 
   return (
     <div>
-      <h1 className="text_center versity_name"> {versityName}</h1>
+      <h1 className="text_center versity_name color4"> {versityName}</h1>
       <div className="text_center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>
@@ -60,7 +60,7 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
       </div>
 
       <p className="submit_date submit_date4 text_right">
-        <span>Date of submission:</span>{" "}
+        <span className="color4">Date of submission:</span>{" "}
         <DateFormater submissionDate={submissionDate} />
       </p>
     </div>

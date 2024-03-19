@@ -6,6 +6,7 @@
 body{
     font-family: sans-serif;
     background-color: hsl(0, 0%, 99.50%);
+    color: #01161e;
 }
 .container{
     max-width: 1200px;
@@ -14,10 +15,17 @@ body{
 }
 .display_img{
     transition: .3s ease-in-out;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    filter: blur(.8px);
 }
 .display_img:hover{
-    transform: translateY(-8px);
+    transform: translateY(-7px);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 98px;
+    filter: blur(0px);
+
+}
+.cover_page_wrapper{
+
 }
 h2{
     text-align: center;
@@ -82,19 +90,35 @@ input:focus, select:focus{
     width: 795.276px;
     padding:110px 84px 110px 84px;
     background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 50px;
-
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
-
+.color1{
+    color: #2b6e9bf1;
+}
+.color2{
+    color: #344e41;
+}
+.color3{
+    color: #124559;
+}
+.color4{
+    color: #8cb369;
+}
+.color5{
+    color: #285943;
+}
+.color6{
+    color: #5b8e7d;
+}
 /* page 1 CSS:------------------------------ */
 
 /* versity name css */
 .versity_name{
     font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #2b6e9bf1;
     margin-top: -15px;
 }
+
 /* logo css */
 .logo_wrapper img{
     width: 130px;
@@ -129,7 +153,7 @@ input:focus, select:focus{
     margin: 32px 0;
 }
 .box{
-    border: 2px solid #d8a43be5;
+    border: 2px solid #41975ec9;
     border-radius: 0 25px 0 25px;
     font-size: 18px;
     padding: 42px 32px 50px 32px;
@@ -149,11 +173,8 @@ input:focus, select:focus{
 .submit_date{
     font-weight: bold;
     font-style: italic;
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 16px;
-}
-.submit_date span{
-    color: #46aaa5ec;
 }
 .course_info p{
     font-size: 18px;
@@ -207,11 +228,11 @@ input:focus, select:focus{
 
 /* Page 3 CSS----------------------------- */
 .assignmen_title3{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom:25px;
-    color: #db8936ce;
+    color: #db8936b0;
 }
 
 .course_info3 p {
@@ -263,7 +284,7 @@ input:focus, select:focus{
 
 /* Page 4 CSS------------------------------- */
 .assignmen_title4{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom:40px;
@@ -338,13 +359,13 @@ input:focus, select:focus{
     font-size: 21px;
 }
 .assignment_on6{
-    font-size: 24px;
+    font-size: 21px;
     text-transform: capitalize;
     color: #91c462e7;
     margin-bottom: 8px;
 }
 .assignmen_title6{
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     margin-bottom: 28px;
 }

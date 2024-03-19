@@ -28,7 +28,7 @@ const Page5 = ({
 
   return (
     <div>
-      <h1 className="text_center versity_name"> {versityName}</h1>
+      <h1 className="text_center versity_name color5"> {versityName}</h1>
       <div className="text_center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>
@@ -80,7 +80,7 @@ const Page5 = ({
       </div>
 
       <p className="submit_date text_right">
-        <span>Date of submission:</span>{" "}
+        <span className="color5">Date of submission:</span>{" "}
         <DateFormater submissionDate={submissionDate} />
       </p>
     </div>
