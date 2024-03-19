@@ -7,7 +7,7 @@ import {getLogo} from "./utilities/getLogo";
 // import kuLogo from './../assets/img/logos/2202.png'
 
 
-const Page1 = ({ item}) => {
+const Page1 = ({ item, logo2202}) => {
 
   // const duLogo = getLogo()
 
@@ -34,7 +34,7 @@ const Page1 = ({ item}) => {
     <div>
       <h1 className="text_center versity_name"> {versityName}</h1>
       <div className="text_center logo_wrapper">
-        <img src={getLogo()} alt="Your University Logo" /> <br />
+        <img src={logo2202} alt="Your University Logo" /> <br />
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title text_center">

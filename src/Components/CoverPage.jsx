@@ -8,7 +8,7 @@ import Page4 from "./Page4";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
 
-// import logo2202 from './../assets/img/logos/2202.png'
+import logo2202 from './../assets/img/logos/2202.png'
 
 import { generateLogo } from "./utilities/generateLogo";
 
@@ -20,7 +20,7 @@ export const CoverPage = ({ item, pageId }) => {
   const logo = generateLogo(zipCode)
   const renderPage = (id) => {
     if (id === 1) {
-      return <Page1 item={item} />;
+      return <Page1 item={item} logo2202={logo2202} />;
     }
     if (id === 2) {
       return <Page2 item={item} logo={logo}  />;
