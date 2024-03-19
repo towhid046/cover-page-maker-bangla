@@ -36,12 +36,13 @@ export const Layout = () => {
       <h1 className="text_center  choose_template_title">
         {isClicked ? "Fillup the form and get your COVER page" : "Choose a template"}
       </h1>
-      <div className="container appear-imgs">
+        <div className='container appear-imgs'>
         {isClicked ? (
           <Form pageId={pageId} />
         ) : (
           imgs.map((img, index) => (
             <img
+            className={`${isClicked ? '': 'display_img'}`}
               onClick={()=>appearPageClickHandelar(index)}
               key={index}
               src={img}
