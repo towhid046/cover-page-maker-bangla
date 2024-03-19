@@ -8,19 +8,19 @@ import Page4 from "./Page4";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
 
-import kuLogo from './../assets/img/logos/2202.png'
+// import logo2202 from './../assets/img/logos/2202.png'
 
 import { generateLogo } from "./utilities/generateLogo";
 
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
+
+  // 
   const zipCode = parseInt(item.versityName.split('-')[1])
-
   const logo = generateLogo(zipCode)
-
   const renderPage = (id) => {
     if (id === 1) {
-      return <Page1 item={item} kuLogo={kuLogo} />;
+      return <Page1 item={item} />;
     }
     if (id === 2) {
       return <Page2 item={item} logo={logo}  />;
