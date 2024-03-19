@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Form } from "./Form";
 import "./../../src/App.css";
-import pageImg from "./../assets/img/page-1.jpg";
+import img1st from "./../assets/img/display-pages/1st.jpg";
+import img2nd from "./../assets/img/display-pages/2nd.jpg";
+import img3rd from "./../assets/img/display-pages/3rd.jpg";
+import img4th from "./../assets/img/display-pages/4th.jpg";
+import img5th from "./../assets/img/display-pages/5th.jpg";
+import img6th from "./../assets/img/display-pages/6th.jpg";
 
 
 
 export const Layout = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [pageId, setPageId] = useState(null);
-  const imgs = [pageImg, pageImg, pageImg, pageImg, pageImg, pageImg];
+  const imgs = [img1st, img2nd, img3rd, img4th, img5th, img6th];
 
   function scrollToTop() {
     window.scrollTo({

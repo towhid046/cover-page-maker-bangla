@@ -5,7 +5,7 @@
 }
 body{
     font-family: sans-serif;
-    background-color: hsl(0, 14%, 99%);
+    background-color: #F1F1F1;
 }
 .container{
     max-width: 1200px;
@@ -99,11 +99,18 @@ input:focus, select:focus{
 }
 /* assignment title css */
 .assignmen_title{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    
     margin: 32px 0;
+    color: #3d3e41;
+}
+.assignmen_title > p{
     color: #91c462e7;
+    margin-bottom: 10px;
+    font-style: italic;
+
 }
 
 /* teacher and student info css */
@@ -156,6 +163,16 @@ input:focus, select:focus{
     margin-bottom: 8px;
     font-weight: bold;
 }
+.assignmen_title2{
+    color: #101010dc;
+}
+.assignmen_title2 > p{
+    text-transform: uppercase;
+    font-style: normal;
+    color: #359c57c9;
+
+
+}
 .boxes2{
     display: flex;
     align-items: center;
@@ -183,7 +200,7 @@ input:focus, select:focus{
 
 /* Page 3 CSS----------------------------- */
 .assignmen_title3{
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom:25px;
@@ -311,10 +328,10 @@ input:focus, select:focus{
 /* Page 6 CSS------------------------------------- */
 .department_name6{
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 21px;
 }
 .assignment_on6{
-    font-size: 26px;
+    font-size: 24px;
     text-transform: capitalize;
     color: #91c462e7;
     margin-bottom: 8px;

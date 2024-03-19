@@ -34,7 +34,7 @@ const Page5 = ({
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title text_center">
-        Assignment On <br /> {assignmentTitle}
+        <p>Assignment On</p> {assignmentTitle}
       </h3>
 
       <div className="course_info5">
