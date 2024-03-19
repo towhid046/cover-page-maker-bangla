@@ -5,6 +5,7 @@ import getLogo from "./utilities/getLogo";
 const Page1 = ({ item}) => {
 
   // const duLogo = getLogo()
+  console.log(getLogo())
 
 
   const {
