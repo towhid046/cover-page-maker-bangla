@@ -18,7 +18,7 @@ export const CoverPage = ({ item, pageId }) => {
 
   const renderPage = (id) => {
     if (id === 1) {
-      return <Page1 item={item} logo={logo} />;
+      return <Page1 item={item} />;
     }
     if (id === 2) {
       return <Page2 item={item} logo={logo}  />;
