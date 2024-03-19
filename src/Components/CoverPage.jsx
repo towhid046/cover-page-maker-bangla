@@ -12,7 +12,6 @@ import { generateLogo } from "./utilities/generateLogo";
 
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
-
   const zipCode = parseInt(item.versityName.split('-')[1])
 
   const logo = generateLogo(zipCode)
