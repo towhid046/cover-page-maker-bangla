@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
+
 import duLogo from './../assets/img/logos/1000.png'
 
-const Page1 = ({ item}) => {
+const Page1 = ({ item, kulogo}) => {
 
   // const duLogo = getLogo()
   const getLogo = () => {
@@ -33,7 +34,7 @@ const Page1 = ({ item}) => {
     <div>
       <h1 className="text_center versity_name"> {versityName}</h1>
       <div className="text_center logo_wrapper">
-        <img src={getLogo()} alt="Your University Logo" /> <br />
+        <img src={kulogo} alt="Your University Logo" /> <br />
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title text_center">
