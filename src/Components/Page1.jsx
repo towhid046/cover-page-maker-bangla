@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
-import getLogo from "./utilities/getLogo";
+import duLogo from './../assets/img/logos/1000.png'
+
 const Page1 = ({ item}) => {
 
   // const duLogo = getLogo()
-  console.log(getLogo())
+  const getLogo = () => {
+    return duLogo;
+}
 
 
   const {
