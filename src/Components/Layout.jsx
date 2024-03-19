@@ -31,7 +31,7 @@ export const Layout = () => {
 
   return (
     <>
-      <h1 className="text_center  choose_template_title">
+      <h1 className="text_center  nav_template_title">
         {isClicked
           ? "Fillup the form and get your COVER page"
           : "Choose a template"}
