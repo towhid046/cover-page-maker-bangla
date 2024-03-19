@@ -2,14 +2,7 @@
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
 
-// import duLogo from './../assets/img/logos/1000.png'
-// import kuLogo from './../assets/img/logos/2202.png'
-
-
 const Page1 = ({ item, logo}) => {
-
-  // const duLogo = getLogo()
-
 
   const {
     versityName,
