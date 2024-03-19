@@ -35,10 +35,10 @@ import logo8602 from "./../assets/img/logos/8602.png";
 import logo9208 from "./../assets/img/logos/9208.png";
 
 import sorterDepartment from "./utilities/sorterDepartment";
-import getUniShorterName from './utilities/getUniShorterName';
+import getUniShorterName from "./utilities/getUniShorterName";
 
 export const CoverPage = ({ item, pageId }) => {
-  const { courseCode } = item;
+  const { courseCode, studentId } = item;
   const zipCode = parseInt(item.versityName.split("-")[1]);
   const logos = [
     { id: 1100, name: logo1100 },
@@ -69,17 +69,21 @@ export const CoverPage = ({ item, pageId }) => {
   ];
 
   const generateLogo = (zip) => {
-    const targetedItem = logos.find((logo) => logo.id === zip);
-    return targetedItem.name;
+    if (!!zip === false) {
+      return "Select Varsity";
+    } else {
+      const targetedItem = logos.find((logo) => logo.id === zip);
+      return targetedItem.name;
+    }
   };
-  const logo = generateLogo(zipCode)
+  const logo = generateLogo(zipCode);
 
   // get sorter dept name:
   const studentSortDeptName = sorterDepartment(item.studentDepartment);
   const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
   // get university short name:
-  const uniShortName = getUniShorterName(item.versityName)
+  const uniShortName = getUniShorterName(item.versityName);
   // render the page based on user clicked:
   const renderPage = (id) => {
     const pages = {
@@ -117,7 +121,7 @@ export const CoverPage = ({ item, pageId }) => {
 
         {courseCode !== undefined && (
           <GenericPdfDownloader
-            downloadFileName="CustomPdf"
+            downloadFileName={`${studentId} cover-page`}
             rootElementId="testId"
           />
         )}
