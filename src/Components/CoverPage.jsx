@@ -33,7 +33,7 @@ export const CoverPage = ({ item, pageId }) => {
       return <Page5 item={item} logo={logo}  />;
     }
     if (id === 6) {
-      return <Page6 item={item} />;
+      return <Page6 item={item} logo={logo} />;
     }
   };
 
@@ -48,6 +48,7 @@ export const CoverPage = ({ item, pageId }) => {
         <GenericPdfDownloader
           downloadFileName="CustomPdf"
           rootElementId="testId"
+          logo={logo}
         />
       )}
     </div>

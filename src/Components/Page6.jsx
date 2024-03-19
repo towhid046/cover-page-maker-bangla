@@ -28,11 +28,11 @@ const Page6 = ({ item, logo }) => {
         Department of {studentDepartment}
       </h2>
       <div className="text_center logo_wrapper logo_wrapper6">
-        <img src={logo} alt="Logo" /> <br />
+        <img style={{maxWidth: '100%'}} src={logo} alt="Logo" /> <br />
       </div>
       <h3 className=" text_center">
         <p className="assignment_on6">Assignment On</p>{" "}
-        <h3 className="assignmen_title6">{assignmentTitle}</h3>
+        <p className="assignmen_title6">{assignmentTitle}</p>
       </h3>
 
       <div className="course_info6">

@@ -74,7 +74,9 @@ input:focus, select:focus{
     margin: 50px auto;
     width: 795.276px;
     padding:110px 84px 110px 84px;
-    background-color: #ffffff;    
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 50px;
+
 }
 
 /* page 1 CSS:------------------------------ */
@@ -84,7 +86,7 @@ input:focus, select:focus{
     font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
     color: #2b6e9bf1;
-    margin-top: -20px;
+    margin-top: -15px;
 }
 /* logo css */
 .logo_wrapper img{
@@ -404,13 +406,12 @@ input:focus, select:focus{
     border: none;
     position: absolute;
     right: 8%;
-    bottom: 4%;
+    bottom: 8%;
     font-size: 18px;
     cursor: pointer;
 }
 .cover_page_parent{
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 50px;
     max-width: 855px;
     margin-inline: auto;
 }
