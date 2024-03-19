@@ -48,7 +48,6 @@ export const CoverPage = ({ item, pageId }) => {
         <GenericPdfDownloader
           downloadFileName="CustomPdf"
           rootElementId="testId"
-          logo={logo}
         />
       )}
     </div>
