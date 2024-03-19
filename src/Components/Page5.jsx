@@ -2,8 +2,13 @@
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
 
-
-const Page5 = ({item, logo, studentSortDeptName, teacherSortDeptName }) => {
+const Page5 = ({
+  item,
+  logo,
+  studentSortDeptName,
+  teacherSortDeptName,
+  uniShortName,
+}) => {
   const {
     versityName,
     assignmentTitle,
@@ -33,13 +38,22 @@ const Page5 = ({item, logo, studentSortDeptName, teacherSortDeptName }) => {
       </h3>
 
       <div className="course_info5">
-        <p><span>Course Title</span>: {courseName}</p>
-        <p><span>Course Code</span>: {courseCode}</p>
-        <p><span>Year</span>: {year}</p>
-        <p><span>Semester</span>: {semester}</p>
-        <p><span>Session</span>: {session}</p>
+        <p>
+          <span>Course Title</span>: {courseName}
+        </p>
+        <p>
+          <span>Course Code</span>: {courseCode}
+        </p>
+        <p>
+          <span>Year</span>: {year}
+        </p>
+        <p>
+          <span>Semester</span>: {semester}
+        </p>
+        <p>
+          <span>Session</span>: {session}
+        </p>
       </div>
-
 
       <div className="boxes5">
         <div className="box2">
@@ -48,18 +62,18 @@ const Page5 = ({item, logo, studentSortDeptName, teacherSortDeptName }) => {
             <p>{studentName}</p>
             <p>Id: {studentId}</p>
             <p>
-              Department of {studentSortDeptName}, <br /> BSMRSTU
+              Department of {studentSortDeptName}, <br /> {uniShortName}
             </p>
           </div>
         </div>
-        
+
         <div className="box2 border-left-5">
           <div className="box_title5">Submitted to:</div>
           <div className="box_content">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
             <p>
-              Department of {teacherSortDeptName}, <br /> BSMRSTU
+              Department of {teacherSortDeptName}, <br /> {uniShortName}
             </p>
           </div>
         </div>

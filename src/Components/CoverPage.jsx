@@ -35,6 +35,7 @@ import logo8602 from "./../assets/img/logos/8602.png";
 import logo9208 from "./../assets/img/logos/9208.png";
 
 import sorterDepartment from "./utilities/sorterDepartment";
+import getUniShorterName from './utilities/getUniShorterName';
 
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
@@ -77,6 +78,8 @@ export const CoverPage = ({ item, pageId }) => {
   const studentSortDeptName = sorterDepartment(item.studentDepartment);
   const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
+  // get university short name:
+  const uniShortName = getUniShorterName(item.versityName)
   // render the page based on user clicked:
   const renderPage = (id) => {
     const pages = {
@@ -97,6 +100,7 @@ export const CoverPage = ({ item, pageId }) => {
           logo={logo}
           studentSortDeptName={studentSortDeptName}
           teacherSortDeptName={teacherSortDeptName}
+          uniShortName={uniShortName}
         />
       );
     } else {

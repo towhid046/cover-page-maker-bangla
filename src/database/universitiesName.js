@@ -1,33 +1,35 @@
+// univesities name
 const universities = [
-  { name: "University of Dhaka", location: "Dhaka", zipCode: "1000" },
-  { name: "Bangladesh Agricultural University", location: "Mymensingh", zipCode: "2202" },
-  { name: "Bangladesh University of Engineering and Technology", location: "Dhaka", zipCode: "1205" },
-  { name: "Jahangirnagar University", location: "Savar, Dhaka", zipCode: "1342" },
-  { name: "Rajshahi University", location: "Rajshahi", zipCode: "6205" },
-  { name: "Chittagong University", location: "Chittagong", zipCode: "4331" },
-  { name: "Khulna University", location: "Khulna", zipCode: "9208" },
-  { name: "Islamic University", location: "Kushtia", zipCode: "7003" },
-  { name: "Shahjalal University of Science and Technology", location: "Sylhet", zipCode: "3100" },
-  { name: "National University, Bangladesh", location: "Gazipur", zipCode: "1704" },
-  { name: "Jagannath University", location: "Dhaka", zipCode: "1100" },
-  { name: "Barisal University", location: "Barisal", zipCode: "8200" },
-  { name: "Comilla University", location: "Comilla", zipCode: "3506" },
-  { name: "Noakhali Science and Technology University", location: "Noakhali", zipCode: "3814" },
-  { name: "Begum Rokeya University, Rangpur", location: "Rangpur", zipCode: "5402" },
-  { name: "Jatiya Kabi Kazi Nazrul Islam University", location: "Trishal, Mymensingh", zipCode: "2220" },
-  { name: "Bangladesh University of Professionals", location: "Dhaka", zipCode: "1216" },
-  { name: "Patuakhali Science and Technology University", location: "Patuakhali", zipCode: "8602" },
-  { name: "Pabna University of Science and Technology", location: "Pabna", zipCode: "6600" },
-  { name: "Jessore University of Science and Technology", location: "Jessore", zipCode: "7408" },
-  { name: "Hajee Mohammad Danesh Science and Technology University", location: "Dinajpur", zipCode: "5200" },
-  { name: "Mawlana Bhashani Science and Technology University", location: "Tangail", zipCode: "2200" },
-  { name: "Sher-e-Bangla Agricultural University", location: "Dhaka", zipCode: "1207" },
+  { name: "University of Dhaka", location: "Dhaka", zipCode: 1000, shortName: "DU" },
+  { name: "Bangladesh Agricultural University", location: "Mymensingh", zipCode: 2202, shortName: "BAU" },
+  { name: "Bangladesh University of Engineering and Technology", location: "Dhaka", zipCode: 1205, shortName: "BUET" },
+  { name: "Jahangirnagar University", location: "Savar, Dhaka", zipCode: 1342, shortName: "JU" },
+  { name: "Rajshahi University", location: "Rajshahi", zipCode: 6205, shortName: "RU" },
+  { name: "Chittagong University", location: "Chittagong", zipCode: 4331, shortName: "CU" },
+  { name: "Khulna University", location: "Khulna", zipCode: 9208, shortName: "KU" },
+  { name: "Islamic University", location: "Kushtia", zipCode: 7003, shortName: "IU" },
+  { name: "Shahjalal University of Science and Technology", location: "Sylhet", zipCode: 3100, shortName: "SUST" },
+  { name: "National University, Bangladesh", location: "Gazipur", zipCode: 1704, shortName: "NUB" },
+  { name: "Jagannath University", location: "Dhaka", zipCode: 1100, shortName: "JnU" },
+  { name: "Barisal University", location: "Barisal", zipCode: 8200, shortName: "BU" },
+  { name: "Comilla University", location: "Comilla", zipCode: 3506, shortName: "CU" },
+  { name: "Noakhali Science and Technology University", location: "Noakhali", zipCode: 3814, shortName: "NSTU" },
+  { name: "Begum Rokeya University, Rangpur", location: "Rangpur", zipCode: 5402, shortName: "BRUR" },
+  { name: "Jatiya Kabi Kazi Nazrul Islam University", location: "Trishal, Mymensingh", zipCode: 2220, shortName: "JKKNIU" },
+  { name: "Bangladesh University of Professionals", location: "Dhaka", zipCode: 1216, shortName: "BUP" },
+  { name: "Patuakhali Science and Technology University", location: "Patuakhali", zipCode: 8602, shortName: "PSTU" },
+  { name: "Pabna University of Science and Technology", location: "Pabna", zipCode: 6600, shortName: "PUST" },
+  { name: "Jessore University of Science and Technology", location: "Jessore", zipCode: 7408, shortName: "JUST" },
+  { name: "Hajee Mohammad Danesh Science and Technology University", location: "Dinajpur", zipCode: 5200, shortName: "HSTU" },
+  { name: "Mawlana Bhashani Science and Technology University", location: "Tangail", zipCode: 2200, shortName: "MBSTU" },
+  { name: "Sher-e-Bangla Agricultural University", location: "Dhaka", zipCode: 1207, shortName: "SAU" },
   {
     name: "Bangabandhu Sheikh Mujibur Rahman Science and Technology University",
     location: "Gopalganj",
-    zipCode: "8100",
+    zipCode: 8100,
+    shortName: "BSMRSTU"
   },
-  { name: "Rabindra University, Bangladesh", location: "Kushtia", zipCode: "7000" }
+  { name: "Rabindra University, Bangladesh", location: "Kushtia", zipCode: 7000, shortName: "RUB" }
 ];
 
 //   dapartment name
@@ -68,7 +70,10 @@ const departments = [
   { name: "Livestock Science and Veterinary Medicine", sortName: "LSVM" },
 ];
 
+// yarns:
 const years = ["1st", "2nd", "3rd", "4th"];
+
+// Teacher titles
 const teacherTitles = [
   "Lecturer",
   "Assistant Professor",
