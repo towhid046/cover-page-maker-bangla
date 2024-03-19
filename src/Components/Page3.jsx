@@ -44,7 +44,7 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
           <div className="box_title3 text_center">Submitted by:</div>
           <div className="box_content3">
             <p>{studentName}</p>
-            <p>Id: {studentId}</p>
+            <p>ID: {studentId}</p>
             <p>Department of {studentSortDeptName}, {uniShortName}</p>
           </div>
         </div>

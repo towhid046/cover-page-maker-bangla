@@ -60,7 +60,7 @@ const Page5 = ({
           <div className="box_title5">Submitted by:</div>
           <div className="box_content">
             <p>{studentName}</p>
-            <p>Id: {studentId}</p>
+            <p>ID: {studentId}</p>
             <p>
               Department of {studentSortDeptName}, <br /> {uniShortName}
             </p>
