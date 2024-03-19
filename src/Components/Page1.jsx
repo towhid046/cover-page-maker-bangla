@@ -3,16 +3,15 @@ import "./../../src/App.css";
 import DateFormater from "./DateFormater";
 
 import duLogo from './../assets/img/logos/1000.png'
-import kuLogo from './../assets/img/logos/2202.png'
+// import kuLogo from './../assets/img/logos/2202.png'
 
 
-const Page1 = ({ item, kulogo}) => {
+const Page1 = ({ item, kuLogo}) => {
 
   // const duLogo = getLogo()
   const getLogo = () => {
     return duLogo;
 }
-console.log(kulogo)
 
 
   const {
@@ -37,7 +36,7 @@ console.log(kulogo)
     <div>
       <h1 className="text_center versity_name"> {versityName}</h1>
       <div className="text_center logo_wrapper">
-        <img src={kulogo} alt="Your University Logo" /> <br />
+        <img src={kuLogo} alt="Your University Logo" /> <br />
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
       <h3 className="assignmen_title text_center">

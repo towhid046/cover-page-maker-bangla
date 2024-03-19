@@ -8,6 +8,7 @@ import Page4 from "./Page4";
 import Page5 from "./Page5";
 import Page6 from "./Page6";
 
+import kuLogo from './../assets/img/logos/2202.png'
 
 import { generateLogo } from "./utilities/generateLogo";
 
@@ -19,7 +20,7 @@ export const CoverPage = ({ item, pageId }) => {
 
   const renderPage = (id) => {
     if (id === 1) {
-      return <Page1 item={item} />;
+      return <Page1 item={item} kuLogo={kuLogo} />;
     }
     if (id === 2) {
       return <Page2 item={item} logo={logo}  />;
