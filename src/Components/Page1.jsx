@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
-import getLogo from "./utilities/getLogo";
+import {getLogo} from "./utilities/getLogo";
 
 // import duLogo from './../assets/img/logos/1000.png'
 // import kuLogo from './../assets/img/logos/2202.png'
