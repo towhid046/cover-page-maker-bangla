@@ -2,7 +2,7 @@
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
 
-const Page1 = ({ item, logo }) => {
+const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName }) => {
   const {
     versityName,
     assignmentTitle,
@@ -47,7 +47,7 @@ const Page1 = ({ item, logo }) => {
             <p>{studentName}</p>
             <p>Id: {studentId}</p>
             <p>
-              Department of {studentDepartment}, <br /> BSMRSTU
+              Department of {studentSortDeptName}, <br /> BSMRSTU
             </p>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Page1 = ({ item, logo }) => {
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
             <p>
-              Department of {teacherDepartment}, <br /> BSMRSTU
+              Department of {teacherSortDeptName}, <br /> BSMRSTU
             </p>
           </div>
         </div>

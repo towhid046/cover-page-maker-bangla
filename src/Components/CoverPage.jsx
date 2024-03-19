@@ -34,6 +34,7 @@ import logo8200 from "./../assets/img/logos/8200.png";
 import logo8602 from "./../assets/img/logos/8602.png";
 import logo9208 from "./../assets/img/logos/9208.png";
 
+import sorterDepartment from "./utilities/sorterDepartment";
 
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode } = item;
@@ -66,32 +67,76 @@ export const CoverPage = ({ item, pageId }) => {
     { id: 9208, name: logo9208 },
   ];
 
-
-  const generateLogo = (zip) => { 
-    const targetedItem = logos.find(logo=> logo.id === zip)
+  const generateLogo = (zip) => {
+    const targetedItem = logos.find((logo) => logo.id === zip);
     return targetedItem.name;
   };
-
   const logo = generateLogo(zipCode);
+
+  // get sorter dept name:
+  const studentSortDeptName = sorterDepartment(item.studentDepartment);
+  const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
   const renderPage = (id) => {
     if (id === 1) {
-      return <Page1 item={item} logo={logo} />;
+      return (
+        <Page1
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
     if (id === 2) {
-      return <Page2 item={item} logo={logo} />;
+      return (
+        <Page2
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
     if (id === 3) {
-      return <Page3 item={item} logo={logo} />;
+      return (
+        <Page3
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
     if (id === 4) {
-      return <Page4 item={item} logo={logo} />;
+      return (
+        <Page4
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
     if (id === 5) {
-      return <Page5 item={item} logo={logo} />;
+      return (
+        <Page5
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
     if (id === 6) {
-      return <Page6 item={item} logo={logo} />;
+      return (
+        <Page6
+          item={item}
+          logo={logo}
+          studentSortDeptName={studentSortDeptName}
+          teacherSortDeptName={teacherSortDeptName}
+        />
+      );
     }
   };
 
