@@ -76,6 +76,7 @@ const teacherTitles = [
 ];
 
 // versity logos:
+
 // const logos = [
 //   { id: 1000, img: "https://i.ibb.co/vY9pXGp/1000.png" },
 //   { id: 1100, img: "https://i.ibb.co/K7XW9T0/1100.png" },
@@ -104,32 +105,5 @@ const teacherTitles = [
 //   { id: 9208, img: "https://i.ibb.co/FWp1CPX/9208.png" },
 // ];
 
-const logos = [
-  { id: 1000, img: "/src/assets/img/logos/1000.png" },
-  { id: 1100, img: "https://i.ibb.co/K7XW9T0/1100.png" },
-  { id: 1205, img: "https://i.ibb.co/zRy6hvt/1205.png" },
-  { id: 1207, img: "https://i.ibb.co/RpJTCd2/1207.png" },
-  { id: 1216, img: "https://i.ibb.co/w7FPKdm/1216.png" },
-  { id: 1342, img: "https://i.ibb.co/k6ZdjJg/1342.png" },
-  { id: 1704, img: "https://i.ibb.co/xqty0t3/1704.png" },
-  { id: 2200, img: "https://i.ibb.co/qpqkFm0/2200.png" },
-  { id: 2202, img: "https://i.ibb.co/5Lmz6Bz/2202.png" },
-  { id: 2220, img: "https://i.ibb.co/RDK3rvH/2220.png" },
-  { id: 3100, img: "https://i.ibb.co/hyxtFGv/3100.png" },
-  { id: 3506, img: "https://i.ibb.co/gd6g2zK/3506.png" },
-  { id: 3814, img: "https://i.ibb.co/wBFmRW5/3814.png" },
-  { id: 4331, img: "https://i.ibb.co/PgC8Tzv/4331.png" },
-  { id: 5200, img: "https://i.ibb.co/cFjyv0Q/5200.png" },
-  { id: 5402, img: "https://i.ibb.co/bNpWBsS/5402.png" },
-  { id: 6205, img: "https://i.ibb.co/XVdF5VV/6205.png" },
-  { id: 6600, img: "https://i.ibb.co/Wkx9cYP/6600.png" },
-  { id: 7000, img: "https://i.ibb.co/wYNWFzt/7000.png" },
-  { id: 7003, img: "https://i.ibb.co/zxTK6g7/7003.png" },
-  { id: 7408, img: "https://i.ibb.co/txxdtcV/7408.png" },
-  { id: 8100, img: "https://i.ibb.co/D85PvqW/8100.png" },
-  { id: 8200, img: "https://i.ibb.co/nLPSCq3/8200.png" },
-  { id: 8602, img: "https://i.ibb.co/HrX4fD6/8602.png" },
-  { id: 9208, img: "https://i.ibb.co/FWp1CPX/9208.png" },
-];
 
-export const data = { universities, departments, years, teacherTitles, logos };
+export const data = { universities, departments, years, teacherTitles };
