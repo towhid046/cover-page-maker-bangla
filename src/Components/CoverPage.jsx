@@ -77,66 +77,30 @@ export const CoverPage = ({ item, pageId }) => {
   const studentSortDeptName = sorterDepartment(item.studentDepartment);
   const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
+  // render the page based on user clicked:
   const renderPage = (id) => {
-    if (id === 1) {
+    const pages = {
+      1: Page1,
+      2: Page2,
+      3: Page3,
+      4: Page4,
+      5: Page5,
+      6: Page6,
+    };
+
+    const SelectedPage = pages[id];
+
+    if (SelectedPage) {
       return (
-        <Page1
+        <SelectedPage
           item={item}
           logo={logo}
           studentSortDeptName={studentSortDeptName}
           teacherSortDeptName={teacherSortDeptName}
         />
       );
-    }
-    if (id === 2) {
-      return (
-        <Page2
-          item={item}
-          logo={logo}
-          studentSortDeptName={studentSortDeptName}
-          teacherSortDeptName={teacherSortDeptName}
-        />
-      );
-    }
-    if (id === 3) {
-      return (
-        <Page3
-          item={item}
-          logo={logo}
-          studentSortDeptName={studentSortDeptName}
-          teacherSortDeptName={teacherSortDeptName}
-        />
-      );
-    }
-    if (id === 4) {
-      return (
-        <Page4
-          item={item}
-          logo={logo}
-          studentSortDeptName={studentSortDeptName}
-          teacherSortDeptName={teacherSortDeptName}
-        />
-      );
-    }
-    if (id === 5) {
-      return (
-        <Page5
-          item={item}
-          logo={logo}
-          studentSortDeptName={studentSortDeptName}
-          teacherSortDeptName={teacherSortDeptName}
-        />
-      );
-    }
-    if (id === 6) {
-      return (
-        <Page6
-          item={item}
-          logo={logo}
-          studentSortDeptName={studentSortDeptName}
-          teacherSortDeptName={teacherSortDeptName}
-        />
-      );
+    } else {
+      return <h2>Page not found</h2>;
     }
   };
 

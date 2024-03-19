@@ -3,7 +3,7 @@ const { departments } = data;
 
 const sorterDepartment = (deptName) => {
   if(deptName === `Teacher's department` || deptName === `Your department`){
-    return `Select your department`
+    return `Select department`
   }
   const targetedDept = departments.find((dept) => dept.name === deptName);
   if (targetedDept.name.split(" ").length > 1) {
