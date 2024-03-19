@@ -99,7 +99,7 @@ input:focus, select:focus{
 }
 /* assignment title css */
 .assignmen_title{
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 32px 0;
@@ -320,7 +320,7 @@ input:focus, select:focus{
     margin-bottom: 8px;
 }
 .assignmen_title6{
-    font-size: 26px;
+    font-size: 24px;
     text-transform: uppercase;
     margin-bottom: 28px;
 }

@@ -6,9 +6,10 @@ import { useState, version } from "react";
 import { CoverPage } from "./CoverPage";
 
 import { data } from "./../database/universitiesName";
-const { universities, departments, years, teacherTitles } = data;
+const { universities, departments, ordinalNumbers, teacherTitles, sessions } =
+  data;
 
-export const Form = ({pageId}) => {
+export const Form = ({ pageId }) => {
   const [pageData, setPageData] = useState([]);
 
   // function for scroll down. it will called after submitting the form
@@ -52,16 +53,15 @@ export const Form = ({pageId}) => {
               <select name="versityName" required>
                 <option className="color_gray">Select your varsity</option>
                 {universities.map((varsity, index) => (
-                  <option key={index}
+                  <option
+                    key={index}
                     value={`${varsity.name}, ${varsity.location}- ${varsity.zipCode}`}
                   >
                     {varsity.name}, {varsity.location}-{varsity.zipCode}
                   </option>
                 ))}
-
               </select>
             </label>
-
             {/* topic name */}
             <label htmlFor="">
               Assignment Title: <br />
@@ -100,8 +100,10 @@ export const Form = ({pageId}) => {
               Year: <br />
               <select required name="year" id="">
                 <option className="color_gray">Year</option>
-                {years.map((year,index) => (
-                  <option key={index} value={year}>{year}</option>
+                {ordinalNumbers.map((year, index) => (
+                  <option key={index} value={year}>
+                    {year}
+                  </option>
                 ))}
               </select>
             </label>{" "}
@@ -111,21 +113,24 @@ export const Form = ({pageId}) => {
               Semester: <br />
               <select required name="semester" id="">
                 <option className="color_gray">Semester</option>
-                <option value="1st">1st</option>
-                <option value="2nd">2nd</option>
+                {ordinalNumbers.map((semester, index) => (
+                  <option key={index} value={semester}>
+                    {semester}
+                  </option>
+                ))}
               </select>
             </label>{" "}
             <br />
-
             {/* semester */}
             <label htmlFor="">
               Session: <br />
               <select required name="session" id="">
                 <option className="color_gray">Session</option>
-                <option value="2018 - 19">2018-19</option>
-                <option value="2019 - 20">2019-20</option>
-                <option value="2020 - 21">2020-21</option>
-                <option value="2021 - 22">2021-22</option>
+                {sessions.map((session, index) => (
+                  <option key={index} value={session}>
+                    {session}
+                  </option>
+                ))}
               </select>
             </label>{" "}
             <br />
@@ -173,7 +178,9 @@ export const Form = ({pageId}) => {
                 >
                   <option className="color_gray">Your department</option>
                   {departments.map((department, index) => (
-                    <option key={index} value={department.name}>{department.name}</option>
+                    <option key={index} value={department.name}>
+                      {department.name}
+                    </option>
                   ))}
                 </select>
               </label>
@@ -198,7 +205,9 @@ export const Form = ({pageId}) => {
                 <select required name="teacherTitle" id="">
                   <option className="color_gray">Teacher's title</option>
                   {teacherTitles.map((teacherTitle, index) => (
-                    <option key={index} value={`${teacherTitle},`}>{teacherTitle}</option>
+                    <option key={index} value={`${teacherTitle},`}>
+                      {teacherTitle}
+                    </option>
                   ))}
                 </select>
                 <br />
@@ -209,7 +218,9 @@ export const Form = ({pageId}) => {
                 <select required name="teacherDepartment">
                   <option className="color_gray">Teacher's department</option>
                   {departments.map((department, index) => (
-                    <option key={index} value={department.name}>{department.name}</option>
+                    <option key={index} value={department.name}>
+                      {department.name}
+                    </option>
                   ))}
                 </select>
               </label>{" "}
