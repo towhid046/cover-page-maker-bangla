@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +12,7 @@ body {
   background-color: hsl(0, 0%, 99.5%);
   color: #01161e;
 }
-.container {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px;
-}
+
 .display_img {
   transition: 0.3s ease-in-out;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
@@ -25,11 +25,10 @@ body {
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 98px;
   filter: blur(0px);
 }
-.cover_page_wrapper {
-}
+
 h2 {
-  text-align: center;
-  margin-bottom: 10px;
+  /* text-align: center; */
+  /* margin-bottom: 10px; */
 }
 label {
   font-size: 20px;
