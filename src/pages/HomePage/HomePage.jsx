@@ -13,7 +13,7 @@ const HomePage = () => {
           them as PDFs.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-lg">
+      <div className="flex flex-col md:flex-row justify-center gap-4 mx-auto w-full max-w-lg">
         <Link to={"/single"}>
           <Button customClass="text-lg md:py-3 py-2 md:px-6 px-4 shadow-lg">
             Single Cover Page
