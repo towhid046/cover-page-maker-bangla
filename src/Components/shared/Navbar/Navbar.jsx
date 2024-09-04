@@ -51,7 +51,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {isToggle && <ResponsiveMenu isToggle={isToggle} setIsToggle={setIsToggle} />}
+      {isToggle && <ResponsiveMenu setIsToggle={setIsToggle} />}
     </>
   );
 };

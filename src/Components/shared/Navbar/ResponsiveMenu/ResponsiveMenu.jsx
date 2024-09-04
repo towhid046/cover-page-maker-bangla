@@ -1,11 +1,11 @@
 import { links } from "./../Navbar";
 import { NavLink } from "react-router-dom";
 import { BiSolidDownArrow } from "react-icons/bi";
-const ResponsiveMenu = ({ isToggle, setIsToggle }) => {
+const ResponsiveMenu = ({ setIsToggle }) => {
   return (
     <nav
       onClick={() => setIsToggle(false)}
-      className={`fixed w-full top-18 z-50 h-full bg-black bg-opacity-80 transition-transform flex`}
+      className={`fixed w-full top-18 z-50 h-full bg-black bg-opacity-80 transition-transform md:hidden flex`}
     >
       <ul
         onClick={(e) => e.stopPropagation()}
