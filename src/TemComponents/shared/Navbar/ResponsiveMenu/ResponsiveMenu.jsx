@@ -1,4 +1,4 @@
-import { links } from "./../Navbar";
+import { links } from "../Navbar";
 import { NavLink } from "react-router-dom";
 import { BiSolidDownArrow } from "react-icons/bi";
 const ResponsiveMenu = ({ setIsToggle }) => {
