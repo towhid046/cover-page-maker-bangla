@@ -1,8 +1,19 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
+import CourseInfo2 from "./shared/CourseInfo2/CourseInfo2";
+import VarsityName from "./shared/VarsityName/VarsityName";
+import Logo from "./shared/Logo/Logo";
+import DeptName from "./shared/DeptName/DeptName";
+import SubmitDate from "./shared/SubmitDate/SubmitDate";
 
-const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortName }) => {
+const Page3 = ({
+  item,
+  logo,
+  studentSortDeptName,
+  teacherSortDeptName,
+  uniShortName,
+}) => {
   const {
     varsityName,
     assignmentTitle,
@@ -17,52 +28,55 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
     studentDepartment,
     teacherName,
     teacherTitle,
-    teacherDepartment,
   } = item;
 
   return (
-    <div>
-      <h1 className="text-center versity_name color4"> {varsityName}</h1>
-      <div className="text-center logo_wrapper">
-        <img src={logo} alt="Logo" /> <br />
-      </div>
-        <h2 className="department_name4 text-center">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title4 text-center">
+    <div className="space-y-6 text-gray-800">
+      <VarsityName varsityName={varsityName} />
+      <Logo logo={logo} />
+      <DeptName studentDepartment={studentDepartment} />
+      <h3 className="text-xl font-semibold uppercase text-[#397342a8] text-center">
         Assignment On <br /> {assignmentTitle}
       </h3>
 
-      <div className="course_info3">
-        <p><span>Course Title</span>: {courseName}</p>
-        <p><span>Course Code</span>: {courseCode}</p>
-        <p><span>Year</span>: {year}</p>
-        <p><span>Semester</span>: {semester}</p>
-        <p><span>Session</span>: {session}</p>
-      </div>
+      <CourseInfo2
+        studentDepartment={studentDepartment}
+        year={year}
+        semester={semester}
+        session={session}
+        courseCode={courseCode}
+        courseName={courseName}
+      />
 
-      <div className="boxes4">
-        <div className="box4">
-          <div className="box_title4 ">Submitted by:</div>
-          <div className="box_content3">
+      <div className="flex items-center gap-5 justify-between">
+        <div className="text-lg p-8 flex-1 font-semibold ">
+          <div className="text-xl underline italic ">Submitted by:</div>
+          <div className="space-y-1 mt-5">
             <p>{studentName}</p>
             <p>ID: {studentId}</p>
-            <p>Department of {studentSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {studentSortDeptName}, {uniShortName}
+            </p>
           </div>
         </div>
 
-        <div className="box4 box4_margin_left">
-          <div className="box_title4 ">Submitted to:</div>
-          <div className="box_content3">
+        <div className="text-lg p-8 flex-1 font-semibold  box4_margin_left">
+          <div className="text-xl underline italic ">Submitted to:</div>
+          <div className="space-y-1 mt-5">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
-            <p>Department of {teacherSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {teacherSortDeptName}, {uniShortName}
+            </p>
           </div>
         </div>
       </div>
 
-      <p className="submit_date submit_date4 text_right">
-        <span className="color4">Date of submission:</span>{" "}
-        <DateFormater submissionDate={submissionDate} />
-      </p>
+      <SubmitDate
+        submissionDate={submissionDate}
+        customClass="text-right"
+        color="#397342a8"
+      />
     </div>
   );
 };

@@ -37,6 +37,9 @@ select{
   cursor: pointer;
 }
 
+
+
+
 .color1 {
   color: #2b6e9bf1;
 }
@@ -169,7 +172,7 @@ select{
 }
 
 /* Page 3 CSS----------------------------- */
-.assignment_title3 {
+.assignmen_title3 {
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -361,17 +364,17 @@ select{
   margin-top: -20px;
 }
 /* -------------------------------------------------------------------- */
-/* .appear-imgs { */
-  /* display: flex; */
+.appear-imgs {
+  display: flex;
   /* grid-template-columns: repeat(3, 1fr); */
-  /* flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1.05rem;
   flex-direction: row;
 }
 .appear-imgs > img {
   max-width: 32%;
   cursor: pointer;
-} */
+}
 .nav_template_title {
   background: #112035;
   padding: 20px;

@@ -32,7 +32,7 @@ const Page1 = ({
   } = item;
 
   return (
-    <div className="space-y-6 text-gray-700">
+    <div className="space-y-6 text-gray-800">
       <VarsityName varsityName={varsityName} customClass="text-[#344e41]" />
 
       <Logo logo={logo} />

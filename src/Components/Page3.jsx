@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
-import DateFormater from "./DateFormater";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import Logo from "./shared/Logo/Logo";
 import SubmitDate from "./shared/SubmitDate/SubmitDate";
+import CourseInfo2 from "./shared/CourseInfo2/CourseInfo2";
 
 const Page3 = ({
   item,
@@ -37,31 +37,14 @@ const Page3 = ({
         Assignment On <br /> {assignmentTitle}
       </h3>
 
-      <div className="font-semibold text-lg space-y-1">
-        <p>
-          <span className="italic w-[150px] inline-block">Department</span>:{" "}
-          {studentDepartment}
-        </p>
-        <p>
-          <span className="italic w-[150px] inline-block">Course Title</span>:{" "}
-          {courseName}
-        </p>
-        <p>
-          <span className="italic w-[150px] inline-block">Course Code</span>:{" "}
-          {courseCode}
-        </p>
-        <p>
-          <span className="italic w-[150px] inline-block">Year</span>: {year}
-        </p>
-        <p>
-          <span className="italic w-[150px] inline-block">Semester</span>:{" "}
-          {semester}
-        </p>
-        <p>
-          <span className="italic w-[150px] inline-block">Session</span>:{" "}
-          {session}
-        </p>
-      </div>
+      <CourseInfo2
+        studentDepartment={studentDepartment}
+        courseName={courseName}
+        year={year}
+        semester={semester}
+        session={session}
+        courseCode={courseCode}
+      />
 
       <div className="flex items-center gap-6 text-lg">
         <div className="border-2 border-[#db8936b0]  rounded-2xl border-opacity-30 p-10 flex-1 font-semibold">
