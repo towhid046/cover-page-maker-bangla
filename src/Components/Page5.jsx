@@ -28,12 +28,12 @@ const Page5 = ({
 
   return (
     <div>
-      <h1 className="text_center versity_name color5"> {varsityName}</h1>
-      <div className="text_center logo_wrapper">
+      <h1 className="text-center versity_name color5"> {varsityName}</h1>
+      <div className="text-center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>
       <h2 className="department_name">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title text_center">
+      <h3 className="assignmen_title text-center">
         <p>Assignment On</p> {assignmentTitle}
       </h3>
 

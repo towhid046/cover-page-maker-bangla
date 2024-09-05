@@ -23,14 +23,14 @@ const Page6 = ({item, logo, studentSortDeptName, teacherSortDeptName, uniShortNa
 
   return (
     <div>
-      <h1 className="text_center versity_name6 color6">{varsityName}</h1>
-      <h2 className="department_name6 text_center">
+      <h1 className="text-center versity_name6 color6">{varsityName}</h1>
+      <h2 className="department_name6 text-center">
         Department of {studentDepartment}
       </h2>
-      <div className="text_center logo_wrapper logo_wrapper6">
+      <div className="text-center logo_wrapper logo_wrapper6">
         <img style={{maxWidth: '100%'}} src={logo} alt="Logo" /> <br />
       </div>
-      <h3 className=" text_center">
+      <h3 className=" text-center">
         <p className="assignment_on6">Assignment On</p>{" "}
         <p className="assignmen_title6">{assignmentTitle}</p>
       </h3>

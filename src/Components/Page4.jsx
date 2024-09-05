@@ -22,12 +22,12 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
 
   return (
     <div>
-      <h1 className="text_center versity_name color4"> {varsityName}</h1>
-      <div className="text_center logo_wrapper">
+      <h1 className="text-center versity_name color4"> {varsityName}</h1>
+      <div className="text-center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>
-        <h2 className="department_name4 text_center">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title4 text_center">
+        <h2 className="department_name4 text-center">Department of {studentDepartment}</h2>
+      <h3 className="assignmen_title4 text-center">
         Assignment On <br /> {assignmentTitle}
       </h3>
 

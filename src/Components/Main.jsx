@@ -31,20 +31,22 @@ export const Main = () => {
 
   return (
     <>
-      <div className="container mx-auto appear-imgs ">
+      <div>
         {isClicked ? (
           <Form pageId={pageId} />
         ) : (
-          imgs.map((img, index) => (
-            <img
-            title="Click to make this cover page"
-              className={`${isClicked ? "" : "display_img"}`}
-              onClick={() => appearPageClickHandler(index)}
-              key={index}
-              src={img}
-              alt="Choose page"
-            />
-          ))
+          <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1 lg:grid-cols-2 lg:px-0 px-4 container mx-auto">
+            {imgs?.map((img, index) => (
+              <img
+                title="Click to make this cover page"
+                className={`${isClicked ? "" : "display_img"}`}
+                onClick={() => appearPageClickHandler(index)}
+                key={index}
+                src={img}
+                alt="Choose page"
+              />
+            ))}
+          </div>
         )}
       </div>
     </>

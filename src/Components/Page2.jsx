@@ -1,8 +1,20 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
+import Logo from "./shared/Logo/Logo";
+import VarsityName from "./shared/VarsityName/VarsityName";
+import DeptName from "./shared/DeptName/DeptName";
+import AssignmentTitle from "./shared/AssignmentTitle/AssignmentTitle";
+import CourseInfo from "./shared/CourseInfo/CourseInfo";
+import SubmitDate from "./shared/SubmitDate/SubmitDate";
 
-const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortName }) => {
+const Page1 = ({
+  item,
+  logo,
+  studentSortDeptName,
+  teacherSortDeptName,
+  uniShortName,
+}) => {
   const {
     varsityName,
     assignmentTitle,
@@ -17,33 +29,33 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
     studentDepartment,
     teacherName,
     teacherTitle,
-    teacherDepartment,
   } = item;
 
   return (
-    <div>
-      <h1 className="text_center versity_name color2">{varsityName}</h1>
-      <div className="text_center logo_wrapper">
-        <img src={logo} alt="Logo" /> <br/>
-      </div>
-      <h2 className="department_name">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title assignmen_title2 text_center">
-       <p> Assignment On </p> {assignmentTitle}
-      </h3>
+    <div className="space-y-6 text-gray-700">
+      <VarsityName varsityName={varsityName} customClass="text-[#344e41]" />
 
-      <div className="course_info2 text_center">
-        <p>Course Title: {courseName}</p>
-        <p>Course Code: {courseCode}</p>
-        <p>Year: {year}</p>
-        <p>Semester: {semester}</p>
-        <p>Session: {session}</p>
-      </div>
+      <Logo logo={logo} />
 
+      <DeptName studentDepartment={studentDepartment} />
 
-      <div className="boxes2">
-        <div className="box2">
-          <div className="box_title2">Submitted by:</div>
-          <div className="box_content">
+      <AssignmentTitle assignmentTitle={assignmentTitle} />
+
+      <CourseInfo
+        courseName={courseName}
+        courseCode={courseCode}
+        year={year}
+        semester={semester}
+        session={session}
+        customClass="text-center"
+      />
+
+      <div className="flex items-center justify-between border-2 border-[#000000c4] rounded-lg m-4">
+        <div className=" pt-3 pb-10  flex-1 font-semibold ">
+          <div className="text-center text-xl pb-3">
+            Submitted by:
+          </div>
+          <div className="p-5 space-y-0.5 border-t-2 border-[#000000c4] ">
             <p>{studentName}</p>
             <p>ID: {studentId}</p>
             <p>
@@ -51,10 +63,12 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
             </p>
           </div>
         </div>
-        
-        <div className="box2 border-left-2">
-          <div className="box_title2">Submitted to:</div>
-          <div className="box_content">
+
+        <div className=" pt-3 pb-10 border-left-2 flex-1 font-semibold ">
+          <div className="text-center text-xl pb-3">
+            Submitted to:
+          </div>
+          <div className="p-5 space-y-0.5 border-t-2 border-[#000000c4] ">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
             <p>
@@ -64,10 +78,7 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
         </div>
       </div>
 
-      <p className="submit_date text_center">
-        <span className="color2">Date of submission:</span>{" "}
-        <DateFormater submissionDate={submissionDate} />
-      </p>
+      <SubmitDate submissionDate={submissionDate} />
     </div>
   );
 };
