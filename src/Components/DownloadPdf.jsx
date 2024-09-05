@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import { useState } from "react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { FaDownload } from "react-icons/fa";
@@ -9,18 +9,25 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
 
   const downloadPdfDocument = async () => {
     setIsDownloading(true);
-  
+
     try {
       const input = document.getElementById(rootElementId);
       if (!input) {
         console.error(`Element with ID '${rootElementId}' not found.`);
         return;
       }
-  
+
       const canvas = await html2canvas(input, { scale: 2 }); // Adjust the scale
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4"); // Specify page size
-      pdf.addImage(imgData, "JPEG", 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
+      pdf.addImage(
+        imgData,
+        "JPEG",
+        0,
+        0,
+        pdf.internal.pageSize.getWidth(),
+        pdf.internal.pageSize.getHeight()
+      );
       pdf.save(`${downloadFileName}.pdf`);
     } catch (error) {
       console.error("Error generating PDF:", error);
@@ -28,14 +35,15 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
       setIsDownloading(false);
     }
   };
-  
+
   return (
     <button
-      className="download_btn"
+      className="absolute bottom-24 text-white rounded right-[24%] flex items-center bg-red-500 px-4 py-2 gap-4"
       onClick={downloadPdfDocument}
       disabled={isDownloading}
     >
-      {isDownloading ? "Downloading..." : "Download"} <FaDownload />
+      <span>{isDownloading ? "Downloading..." : "Download"}</span>{" "}
+      <FaDownload />
     </button>
   );
 };

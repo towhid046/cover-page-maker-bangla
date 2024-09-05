@@ -1,9 +1,9 @@
-import { Layout } from "./../../components/Layout";
+import { Main } from "./../../components/Main";
 
 const SinglePage = () => {
   return (
     <div className="py-10">
-      <Layout />
+      <Main />
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Page5 = ({
   uniShortName,
 }) => {
   const {
-    versityName,
+    varsityName,
     assignmentTitle,
     courseName,
     courseCode,
@@ -28,7 +28,7 @@ const Page5 = ({
 
   return (
     <div>
-      <h1 className="text_center versity_name color5"> {versityName}</h1>
+      <h1 className="text_center versity_name color5"> {varsityName}</h1>
       <div className="text_center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>

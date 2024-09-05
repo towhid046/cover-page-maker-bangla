@@ -4,7 +4,7 @@ import DateFormater from "./DateFormater";
 
 const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortName }) => {
   const {
-    versityName,
+    varsityName,
     assignmentTitle,
     courseName,
     courseCode,
@@ -22,7 +22,7 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
 
   return (
     <div>
-      <h1 className="text_center versity_name color3"> {versityName}</h1>
+      <h1 className="text_center versity_name color3"> {varsityName}</h1>
       <div className="text_center logo_wrapper">
         <img src={logo} alt="Logo" /> <br />
       </div>
