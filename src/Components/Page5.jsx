@@ -48,7 +48,7 @@ const Page5 = ({
 
       <div className="boxes5">
         <div className="box2">
-          <div className="box_title5">Submitted by:</div>
+          <div className="box_title5">Submitted by-</div>
           <div className="box_content">
             <p>{studentName}</p>
             <p>ID: {studentId}</p>
