@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
+import VarsityName from "./shared/VarsityName/VarsityName";
+import Logo from "./shared/Logo/Logo";
+import DeptName from "./shared/DeptName/DeptName";
+import AssignmentTitle from "./shared/AssignmentTitle/AssignmentTitle";
+import CourseInfo from "./shared/CourseInfo/CourseInfo";
 
 const Page5 = ({
   item,
@@ -10,7 +15,7 @@ const Page5 = ({
   uniShortName,
 }) => {
   const {
-    versityName,
+    varsityName,
     assignmentTitle,
     courseName,
     courseCode,
@@ -23,37 +28,23 @@ const Page5 = ({
     studentDepartment,
     teacherName,
     teacherTitle,
-    teacherDepartment,
   } = item;
 
   return (
-    <div>
-      <h1 className="text_center versity_name color5"> {versityName}</h1>
-      <div className="text_center logo_wrapper">
-        <img src={logo} alt="Logo" /> <br />
-      </div>
-      <h2 className="department_name">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title text_center">
-        <p>Assignment On</p> {assignmentTitle}
-      </h3>
+    <div className="space-y-6">
+      <VarsityName varsityName={varsityName} customClass="text-[#285943]" />
+      <Logo logo={logo} />
+      <DeptName studentDepartment={studentDepartment} />
 
-      <div className="course_info5">
-        <p>
-          <span>Course Title</span>: {courseName}
-        </p>
-        <p>
-          <span>Course Code</span>: {courseCode}
-        </p>
-        <p>
-          <span>Year</span>: {year}
-        </p>
-        <p>
-          <span>Semester</span>: {semester}
-        </p>
-        <p>
-          <span>Session</span>: {session}
-        </p>
-      </div>
+      <AssignmentTitle assignmentTitle={assignmentTitle} />
+
+      <CourseInfo
+        courseCode={courseCode}
+        courseName={courseName}
+        year={year}
+        semester={semester}
+        session={session}
+      />
 
       <div className="boxes5">
         <div className="box2">

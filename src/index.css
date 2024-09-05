@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* nav menu related css */
+.nav_menu > li > a.active {
+  color: #5e9df5;
+}

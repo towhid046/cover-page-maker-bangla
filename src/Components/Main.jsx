@@ -8,7 +8,7 @@ import img4th from "./../assets/img/display-pages/4th.jpg";
 import img5th from "./../assets/img/display-pages/5th.jpg";
 import img6th from "./../assets/img/display-pages/6th.jpg";
 
-export const Layout = () => {
+export const Main = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [pageId, setPageId] = useState(null);
   const imgs = [img1st, img2nd, img3rd, img4th, img5th, img6th];
@@ -20,7 +20,7 @@ export const Layout = () => {
     });
   }
 
-  const appearPageClickHandelar = (index) => {
+  const appearPageClickHandler = (index) => {
     setPageId(index);
 
     setTimeout(() => {
@@ -31,25 +31,22 @@ export const Layout = () => {
 
   return (
     <>
-      <h1 className="text_center  nav_template_title">
-        {isClicked
-          ? "Fillup the form and get your COVER page"
-          : "Choose a template"}
-      </h1>
-      <div className="container appear-imgs ">
+      <div>
         {isClicked ? (
           <Form pageId={pageId} />
         ) : (
-          imgs.map((img, index) => (
-            <img
-            title="Click to make this cover page"
-              className={`${isClicked ? "" : "display_img"}`}
-              onClick={() => appearPageClickHandelar(index)}
-              key={index}
-              src={img}
-              alt="Choose page"
-            />
-          ))
+          <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1 lg:grid-cols-2 lg:px-0 px-4 container mx-auto">
+            {imgs?.map((img, index) => (
+              <img
+                title="Click to make this cover page"
+                className={`${isClicked ? "" : "display_img"}`}
+                onClick={() => appearPageClickHandler(index)}
+                key={index}
+                src={img}
+                alt="Choose page"
+              />
+            ))}
+          </div>
         )}
       </div>
     </>

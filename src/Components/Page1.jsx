@@ -1,11 +1,22 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
 import DateFormater from "./DateFormater";
+import Logo from "./shared/Logo/Logo";
+import VarsityName from "./shared/VarsityName/VarsityName";
+import DeptName from "./shared/DeptName/DeptName";
+import AssignmentTitle from "./shared/AssignmentTitle/AssignmentTitle";
+import CourseInfo from "./shared/CourseInfo/CourseInfo";
+import SubmitDate from "./shared/SubmitDate/SubmitDate";
 
-const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortName}) => {
-
+const Page1 = ({
+  item,
+  logo,
+  studentSortDeptName,
+  teacherSortDeptName,
+  uniShortName,
+}) => {
   const {
-    versityName,
+    varsityName,
     assignmentTitle,
     courseName,
     courseCode,
@@ -18,54 +29,51 @@ const Page1 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
     studentDepartment,
     teacherName,
     teacherTitle,
-    teacherDepartment,
   } = item;
-  
 
   return (
-    <div>
-      <h1 className="text_center versity_name color1"> {versityName}</h1>
-      <div className="text_center logo_wrapper">
-        <img src={logo} alt="Your University Logo" /> <br />
-      </div>
-      <h2 className="department_name">Department of {studentDepartment}</h2>
-      <h3 className="assignmen_title text_center">
-        <p>Assignment On</p> {assignmentTitle}
-      </h3>
+    <div className="text-gray-800 space-y-7">
+      <VarsityName varsityName={varsityName} customClass={"text-[#2b6e9bf1]"} />
 
-      <div className="course_info">
-        <p>Course Title: {courseName}</p>
-        <p>Course Code: {courseCode}</p>
-        <p>Year: {year}</p>
-        <p>Semester: {semester}</p>
-        <p>Session: {session}</p>
-      </div>
+      <Logo logo={logo} />
 
-      <div className="boxes">
-      
-        <div className="box">
-          <div className="box_title">Submitted by:</div>
-          <div className="box_content">
+      <DeptName studentDepartment={studentDepartment} />
+
+      <AssignmentTitle assignmentTitle={assignmentTitle} />
+
+      <CourseInfo
+        courseName={courseName}
+        courseCode={courseCode}
+        year={year}
+        semester={semester}
+        session={session}
+      />
+
+      <div className="flex items-center justify-between gap-6 font-semibold">
+        <div className="flex-1 border-2 border-[#2b6e9b77] rounded-tr-3xl rounded-bl-3xl px-11 py-12">
+          <div className="italic mb-2">Submitted by:</div>
+          <div className="transition-transform space-y-1 translate-x-6">
             <p>{studentName}</p>
             <p>ID: {studentId}</p>
-            <p>Department of {studentSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {studentSortDeptName}, <br /> {uniShortName}
+            </p>
           </div>
         </div>
 
-        <div className="box">
-          <div className="box_title">Submitted to:</div>
-          <div className="box_content">
+        <div className="flex-1 border-2 border-[#2b6e9b77] rounded-tr-3xl rounded-bl-3xl px-8 py-12">
+          <div className="italic mb-2">Submitted to:</div>
+          <div className="transition-transform space-y-1 translate-x-6">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
-            <p>Department of {teacherSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {teacherSortDeptName},<br /> {uniShortName}
+            </p>
           </div>
         </div>
       </div>
-      
-      <p className="submit_date text_center">
-        <span className="color1">Date of submission:</span>{" "}
-        <DateFormater submissionDate={submissionDate} />
-      </p>
+
+      <SubmitDate submissionDate={submissionDate} />
     </div>
   );
 };

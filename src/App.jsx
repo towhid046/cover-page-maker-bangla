@@ -1,12 +1,10 @@
-import { Layout } from "./Components/Layout";
-import Footer from "./Components/shared/Footer";
+import { Layout } from "./components/Layout";
 
 export default function App() {
   return (
     <>
       <div>
         <Layout />
-        <Footer />
       </div>
     </>
   );

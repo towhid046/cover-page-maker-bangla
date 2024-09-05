@@ -1,10 +1,19 @@
 /* eslint-disable react/prop-types */
 import "./../../src/App.css";
-import DateFormater from "./DateFormater";
+import VarsityName from "./shared/VarsityName/VarsityName";
+import Logo from "./shared/Logo/Logo";
+import SubmitDate from "./shared/SubmitDate/SubmitDate";
+import CourseInfo2 from "./shared/CourseInfo2/CourseInfo2";
 
-const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortName }) => {
+const Page3 = ({
+  item,
+  logo,
+  studentSortDeptName,
+  teacherSortDeptName,
+  uniShortName,
+}) => {
   const {
-    versityName,
+    varsityName,
     assignmentTitle,
     courseName,
     courseCode,
@@ -17,52 +26,51 @@ const Page3 = ({ item, logo, studentSortDeptName, teacherSortDeptName, uniShortN
     studentDepartment,
     teacherName,
     teacherTitle,
-    teacherDepartment,
   } = item;
 
   return (
-    <div>
-      <h1 className="text_center versity_name color3"> {versityName}</h1>
-      <div className="text_center logo_wrapper">
-        <img src={logo} alt="Logo" /> <br />
-      </div>
-      <h3 className="assignmen_title3 text_center">
+    <div className="space-y-6">
+      <VarsityName varsityName={varsityName} customClass={"text-[#124559]"} />
+      <Logo logo={logo} />
+
+      <h3 className="text-xl font-semibold uppercase text-[#db8936b0] text-center">
         Assignment On <br /> {assignmentTitle}
       </h3>
 
-      <div className="course_info3">
-        <p><span>Department</span>: {studentDepartment}</p>
-        <p><span>Course Title</span>: {courseName}</p>
-        <p><span>Course Code</span>: {courseCode}</p>
-        <p><span>Year</span>: {year}</p>
-        <p><span>Semester</span>: {semester}</p>
-        <p><span>Session</span>: {session}</p>
-      </div>
+      <CourseInfo2
+        studentDepartment={studentDepartment}
+        courseName={courseName}
+        year={year}
+        semester={semester}
+        session={session}
+        courseCode={courseCode}
+      />
 
-      <div className="boxes3">
-        <div className="box3">
-          <div className="box_title3 text_center">Submitted by:</div>
-          <div className="box_content3">
+      <div className="flex items-center gap-6 text-lg">
+        <div className="border-2 border-[#db8936b0]  rounded-2xl border-opacity-30 p-10 flex-1 font-semibold">
+          <div className="italic text-xl text-center">Submitted by-</div>
+          <div className="mt-5 space-y-1">
             <p>{studentName}</p>
             <p>ID: {studentId}</p>
-            <p>Department of {studentSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {studentSortDeptName},<br /> {uniShortName}
+            </p>
           </div>
         </div>
 
-        <div className="box3">
-          <div className="box_title3 text_center">Submitted to:</div>
-          <div className="box_content3">
+        <div className="border-2 border-[#db8936b0] rounded-2xl border-opacity-30 p-10 flex-1 font-semibold">
+          <div className="italic text-xl text-center">Submitted to-</div>
+          <div className="mt-5 space-y-1">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
-            <p>Department of {teacherSortDeptName}, {uniShortName}</p>
+            <p>
+              Department of {teacherSortDeptName}, <br /> {uniShortName}
+            </p>
           </div>
         </div>
       </div>
 
-      <p className="submit_date text_right">
-        <span className="color3">Date of submission:</span>{" "}
-        <DateFormater submissionDate={submissionDate} />
-      </p>
+      <SubmitDate submissionDate={submissionDate} customClass="text-right" />
     </div>
   );
 };
