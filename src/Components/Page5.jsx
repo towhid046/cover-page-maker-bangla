@@ -59,7 +59,7 @@ const Page5 = ({
         </div>
 
         <div className="box2 border-left-5">
-          <div className="box_title5">Submitted to:</div>
+          <div className="box_title5">Submitted to-</div>
           <div className="box_content">
             <p>{teacherName}</p>
             <p>{teacherTitle}</p>
