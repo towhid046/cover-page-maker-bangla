@@ -1,7 +1,9 @@
 import Button from "../../components/shared/Button/Button";
 import { Link } from "react-router-dom";
+import useScrollToTop from './../../hooks/useScrollToTop';
 
 const HomePage = () => {
+  useScrollToTop()
   return (
     <div className="mx-auto px-4 flex flex-col justify-center items-center min-h-[80vh] bg-white text-gray-800 text-center">
       <div className="mb-8">
@@ -15,7 +17,7 @@ const HomePage = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-4 mx-auto w-full max-w-lg">
         <Link to={"/single"}>
-          <Button customClass="text-lg md:py-3 py-2 md:px-6 px-4 shadow-lg">
+          <Button customClass="text-lg md:py-3 py-2 md:px-6 px-4 shadow-lg ">
             Single Cover Page
           </Button>
         </Link>

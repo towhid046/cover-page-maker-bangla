@@ -27,8 +27,8 @@ const Navbar = () => {
             </button>
             <div>
               <Link
-                to={"/"}
-                className="lg:text-3xl font-bold text-gray-600 text-2xl"
+                to="/"
+                className="md:text-4xl text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
               >
                 CPG
               </Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
             {links?.map((link) => (
               <li key={link.id}>
                 <NavLink
-                  className="text-gray-600 hover:text-blue-400 duration-300 transition"
+                  className="text-gray-600 hover:text-purple-500 duration-300 transition"
                   to={link.link}
                 >
                   {link.label}
@@ -47,7 +47,9 @@ const Navbar = () => {
             ))}
           </ul>
           <div>
-            <Button>Login</Button>
+            <Link to={"/login"}>
+              <Button>Login</Button>
+            </Link>
           </div>
         </div>
       </nav>

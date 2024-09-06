@@ -1,20 +1,21 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-const-assign */
-/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { CoverPage } from "./CoverPage";
 
 import { data } from "./../database/universitiesName";
 import Button from "./shared/Button/Button";
 import { scrollToBottom } from "./utilities/scrollToBottom";
+import useScrollToTop from "../hooks/useScrollToTop";
 const { universities, departments, ordinalNumbers, teacherTitles, sessions } =
   data;
 
+const commonInputClassName =
+  "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none";
+const inputParentClassName = "flex flex-col gap-1 text-lg mb-3";
+
 export const Form = ({ pageId }) => {
+  useScrollToTop();
+
   const [pageData, setPageData] = useState([]);
-
-
 
   // handel form submit:
   const formSubmitHandler = (event) => {
@@ -31,10 +32,6 @@ export const Form = ({ pageId }) => {
       scrollToBottom();
     }, 100);
   };
-
-  const commonInputClassName =
-    "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none";
-  const inputParentClassName = "flex flex-col gap-1 text-lg mb-3";
 
   return (
     <>

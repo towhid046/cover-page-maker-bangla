@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
-}
+  useScrollToTop();
+  return <div>LoginPage</div>;
+};
 
-export default LoginPage
+export default LoginPage;

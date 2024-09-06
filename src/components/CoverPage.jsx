@@ -9,8 +9,6 @@ import { generateLogo } from './utilities/generateLogo';
 import { pages } from './utilities/pages';
 
 
-
-
 export const CoverPage = ({ item, pageId }) => {
   const { courseCode, studentId } = item;
   const zipCode = parseInt(item.varsityName.split("-")[1]);
@@ -51,7 +49,7 @@ export const CoverPage = ({ item, pageId }) => {
       </div>
         {courseCode !== undefined && (
           <GenericPdfDownloader
-            downloadFileName={`${studentId} cover-page`}
+            downloadFileName={`${studentId}`}
             rootElementId="testId"
           />
         )}

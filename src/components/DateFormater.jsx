@@ -24,7 +24,10 @@ export default function DateFormater({ submissionDate }) {
   return (
     <em>
       {a}
-      <sup>th</sup> {month + ", "}
+      <sup>
+        {a === "01" ? "st" : a === "02" ? "nd" : a === "03" ? "rd" : "th"}
+      </sup>{" "}
+      {month + ", "}
       {c}
     </em>
   );
