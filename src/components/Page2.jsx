@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
+import "./../../src/index.css";
 import Logo from "./shared/Logo/Logo";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import DeptName from "./shared/DeptName/DeptName";
@@ -62,7 +62,7 @@ const Page1 = ({
             </div>
           </div>
 
-          <div className=" pt-3 pb-10 border-left-2 flex-1 font-semibold ">
+          <div className=" pt-3 pb-10 border-l-2 border-[#000000c4] flex-1 font-semibold ">
             <div className="text-center text-xl pb-3">Submitted to:</div>
             <div className="p-5 space-y-0.5 border-t-2 border-[#000000c4] ">
               <p>{teacherName}</p>

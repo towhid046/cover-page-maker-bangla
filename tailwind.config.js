@@ -5,8 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        titillium: ["'Titillium Web'", 'sans-serif'],
+        roboto: ["'Roboto'", 'sans-serif'],
+        poppins: ["'Poppins'", 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
-

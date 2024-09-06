@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
+import "./../../src/index.css";
 import GenericPdfDownloader from "./DownloadPdf";
 
 

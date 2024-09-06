@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
-import DateFormater from "./DateFormater";
+import "./../../src/index.css";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import Logo from "./shared/Logo/Logo";
 import DeptName from "./shared/DeptName/DeptName";
@@ -48,7 +47,7 @@ const Page5 = ({
           session={session}
         />
 
-        <div className="flex items-center justify-between border-[3px] border-[#397342a8] text-xl rounded-tl-2xl rounded-br-2xl m-[15px]">
+        <div className="flex items-center justify-between border-[3px] border-[#397342a8] text-xl rounded-tl-2xl rounded-br-2xl ">
           <div className="text-lg pt-4 pb-9 flex-1 font-semibold ">
             <div className="border-b-[3px] pb-2 text-center border-[#397342a8]">Submitted by-</div>
             <div className="mt-5 transition-transform translate-x-7">
@@ -60,7 +59,7 @@ const Page5 = ({
             </div>
           </div>
 
-          <div className="text-lg pt-4 pb-9 flex-1 font-semibold  border-left-5">
+          <div className="text-lg pt-4 pb-9 flex-1 font-semibold  border-l-[3px] border-[#397342a8]">
             <div className="border-b-[3px] pb-2 text-center border-[#397342a8]">Submitted to-</div>
             <div className="mt-5 transition-transform translate-x-7">
               <p>{teacherName}</p>

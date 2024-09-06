@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
-import DateFormater from "./DateFormater";
+import "./../../src/index.css";
 import CourseInfo2 from "./shared/CourseInfo2/CourseInfo2";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import Logo from "./shared/Logo/Logo";
@@ -33,7 +32,7 @@ const Page3 = ({
   return (
     <div className="space-y-6 text-gray-800">
       <VarsityName varsityName={varsityName} />
-      <div className="w-[627px] space-y-6">
+      <div className="w-[627px] space-y-7">
         <Logo logo={logo} />
         <DeptName studentDepartment={studentDepartment} />
         <h3 className="text-xl font-semibold uppercase text-[#397342a8] text-center">
@@ -50,7 +49,7 @@ const Page3 = ({
         />
 
         <div className="flex items-center gap-5 justify-between">
-          <div className="text-lg p-8 flex-1 font-semibold ">
+          <div className="text-lg flex-1 font-semibold ">
             <div className="text-xl underline italic ">Submitted by:</div>
             <div className="space-y-1 mt-5">
               <p>{studentName}</p>
@@ -61,7 +60,7 @@ const Page3 = ({
             </div>
           </div>
 
-          <div className="text-lg p-8 flex-1 font-semibold  box4_margin_left">
+          <div className="text-lg pl-8 flex-1 font-semibold  border-l-[3px] border-gray-600">
             <div className="text-xl underline italic ">Submitted to:</div>
             <div className="space-y-1 mt-5">
               <p>{teacherName}</p>

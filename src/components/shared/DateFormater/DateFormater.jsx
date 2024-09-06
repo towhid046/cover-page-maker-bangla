@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 export default function DateFormater({ submissionDate }) {
   const [a, b, c] = submissionDate.split("-").reverse();
 
@@ -32,3 +30,5 @@ export default function DateFormater({ submissionDate }) {
     </em>
   );
 }
+
+

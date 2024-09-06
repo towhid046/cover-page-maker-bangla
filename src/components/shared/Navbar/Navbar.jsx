@@ -16,19 +16,19 @@ const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
   return (
     <>
-      <nav className=" bg-white py-4 sticky top-0 z-50 shadow-sm px-4">
+      <nav className=" bg-white py-3 sticky top-0 z-50 shadow-sm px-4 font-poppins">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <button
-              className="text-2xl md:hidden flex"
+              className="text-3xl md:hidden flex"
               onClick={() => setIsToggle(!isToggle)}
             >
               {isToggle ? <RxCross2 /> : <IoMdMenu />}
             </button>
-            <div>
+            <div className="">
               <Link
                 to="/"
-                className="md:text-4xl text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                className="font-titillium md:text-5xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
               >
                 CPG
               </Link>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
+import "./../../src/index.css";
 import Logo from "./shared/Logo/Logo";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import DeptName from "./shared/DeptName/DeptName";

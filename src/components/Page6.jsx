@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./../../src/App.css";
-import DateFormater from "./DateFormater";
+import "./../../src/index.css";
 import VarsityName from "./shared/VarsityName/VarsityName";
 import DeptName from "./shared/DeptName/DeptName";
 import Logo from "./shared/Logo/Logo";
@@ -49,13 +48,13 @@ const Page6 = ({
           year={year}
           semester={semester}
           session={session}
-          customClass="text-md space-y-0.5"
+          customClass=" space-y-0.5"
         />
 
         <div className="flex flex-col gap-6">
-          <div className="text-lg py-[5px] px-8 flex-1 font-semibold border-l-4 border-[#568360b6]">
-            <div className="text-xl  italic underline ">Submitted by:</div>
-            <div className="mt-5 space-y-1">
+          <div className="text-md py-[5px] px-8 flex-1 font-semibold border-l-4 border-[#568360b6]">
+            <div className="text-lg  italic underline ">Submitted by:</div>
+            <div className="mt-3.5 space-y-1">
               <p>{studentName}</p>
               <p>ID: {studentId}</p>
               <p>
@@ -64,9 +63,9 @@ const Page6 = ({
             </div>
           </div>
 
-          <div className="text-lg py-[5px] px-8 flex-1 font-semibold border-l-4 border-[#568360b6] box6_right">
-            <div className="text-xl  italic underline ">Submitted to:</div>
-            <div className="mt-5 space-y-1">
+          <div className="text-md py-[5px] px-8 flex-1 font-semibold border-l-4 border-[#568360b6] self-end">
+            <div className="text-lg  italic underline ">Submitted to:</div>
+            <div className="mt-3.5 space-y-1">
               <p>{teacherName}</p>
               <p>{teacherTitle}</p>
               <p>

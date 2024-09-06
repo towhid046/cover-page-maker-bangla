@@ -1,4 +1,4 @@
-import DateFormater from '../../DateFormater'
+import DateFormater from "../DateFormater/DateFormater"
 
 const SubmitDate = ({submissionDate, customClass='text-center', color='#2b6e9bf1'}) => {
   return (

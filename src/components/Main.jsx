@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form } from "./Form";
-import "./../../src/App.css";
+import "./../../src/index.css";
 import img1st from "./../assets/img/display-pages/1st.jpg";
 import img2nd from "./../assets/img/display-pages/2nd.jpg";
 import img3rd from "./../assets/img/display-pages/3rd.jpg";
