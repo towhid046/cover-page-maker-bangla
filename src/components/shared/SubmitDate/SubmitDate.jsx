@@ -1,8 +1,8 @@
 import DateFormater from '../../DateFormater'
 
-const SubmitDate = ({submissionDate, customClass, color='color1'}) => {
+const SubmitDate = ({submissionDate, customClass='text-center', color='#2b6e9bf1'}) => {
   return (
-    <p className={`font-semibold italic text-center pt-8 ${customClass}`}>
+    <p className={`font-semibold italic  pt-8 ${customClass}`}>
         <span className={` text-[${color}]`}>Date of submission:</span>{" "}
         <DateFormater submissionDate={submissionDate} />
       </p>

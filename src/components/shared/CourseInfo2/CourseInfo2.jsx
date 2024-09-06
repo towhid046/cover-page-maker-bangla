@@ -1,10 +1,10 @@
-const CourseInfo2 = ({studentDepartment, courseName, courseCode, year, semester, session}) => {
+const CourseInfo2 = ({studentDepartment, courseName, courseCode, year, semester, session, customClass='text-lg space-y-1'}) => {
   return (
-    <div className="font-semibold text-lg space-y-1">
-      <p>
+    <div className={`font-semibold  ${customClass}`}>
+     {studentDepartment && <p>
         <span className="italic w-[150px] inline-block">Department</span>:{" "}
         {studentDepartment}
-      </p>
+      </p>}
       <p>
         <span className="italic w-[150px] inline-block">Course Title</span>:{" "}
         {courseName}

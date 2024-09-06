@@ -44,7 +44,7 @@ export const CoverPage = ({ item, pageId }) => {
   return (
     <section className="mx-auto px-4 container relative">
       <div className="flex justify-center">
-        <div id="testId" className="w-[795.276px] py-[100px] px-[84px] shadow-2xl bg-white mb-12">
+        <div id="testId" className="cover_page_wrapper shadow-2xl bg-white mb-12">
           {renderPage(pageId + 1)}
         </div>
 

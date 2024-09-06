@@ -6,6 +6,7 @@ import Logo from "./shared/Logo/Logo";
 import DeptName from "./shared/DeptName/DeptName";
 import AssignmentTitle from "./shared/AssignmentTitle/AssignmentTitle";
 import CourseInfo from "./shared/CourseInfo/CourseInfo";
+import SubmitDate from "./shared/SubmitDate/SubmitDate";
 
 const Page5 = ({
   item,
@@ -31,49 +32,48 @@ const Page5 = ({
   } = item;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-7 text-gray-800">
       <VarsityName varsityName={varsityName} customClass="text-[#285943]" />
-      <Logo logo={logo} />
-      <DeptName studentDepartment={studentDepartment} />
+      <div className="w-[627px] space-y-7">
+        <Logo logo={logo} />
+        <DeptName studentDepartment={studentDepartment} />
 
-      <AssignmentTitle assignmentTitle={assignmentTitle} />
+        <AssignmentTitle assignmentTitle={assignmentTitle} />
 
-      <CourseInfo
-        courseCode={courseCode}
-        courseName={courseName}
-        year={year}
-        semester={semester}
-        session={session}
-      />
+        <CourseInfo
+          courseCode={courseCode}
+          courseName={courseName}
+          year={year}
+          semester={semester}
+          session={session}
+        />
 
-      <div className="boxes5">
-        <div className="box2">
-          <div className="box_title5">Submitted by-</div>
-          <div className="box_content">
-            <p>{studentName}</p>
-            <p>ID: {studentId}</p>
-            <p>
-              Department of {studentSortDeptName}, <br /> {uniShortName}
-            </p>
+        <div className="flex items-center justify-between border-[3px] border-[#397342a8] text-xl rounded-tl-2xl rounded-br-2xl m-[15px]">
+          <div className="text-lg pt-4 pb-9 flex-1 font-semibold ">
+            <div className="border-b-[3px] pb-2 text-center border-[#397342a8]">Submitted by-</div>
+            <div className="mt-5 transition-transform translate-x-7">
+              <p>{studentName}</p>
+              <p>ID: {studentId}</p>
+              <p>
+                Department of {studentSortDeptName}, <br /> {uniShortName}
+              </p>
+            </div>
+          </div>
+
+          <div className="text-lg pt-4 pb-9 flex-1 font-semibold  border-left-5">
+            <div className="border-b-[3px] pb-2 text-center border-[#397342a8]">Submitted to-</div>
+            <div className="mt-5 transition-transform translate-x-7">
+              <p>{teacherName}</p>
+              <p>{teacherTitle}</p>
+              <p>
+                Department of {teacherSortDeptName}, <br /> {uniShortName}
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="box2 border-left-5">
-          <div className="box_title5">Submitted to-</div>
-          <div className="box_content">
-            <p>{teacherName}</p>
-            <p>{teacherTitle}</p>
-            <p>
-              Department of {teacherSortDeptName}, <br /> {uniShortName}
-            </p>
-          </div>
-        </div>
+        <SubmitDate submissionDate={submissionDate} color="#285943" customClass='text-right' />
       </div>
-
-      <p className="submit_date text_right">
-        <span className="color5">Date of submission:</span>{" "}
-        <DateFormater submissionDate={submissionDate} />
-      </p>
     </div>
   );
 };
