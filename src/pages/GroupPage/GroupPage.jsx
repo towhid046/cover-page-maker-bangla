@@ -1,5 +1,5 @@
 import useScrollToTop from "./../../hooks/useScrollToTop";
-import img1st from "../../assets/img/display-pages/1st.jpg";
+import groupPage1 from "../../assets/img/display-pages/group_page_1.jpg";
 // import img2nd from "../../assets/img/display-pages/2nd.jpg";
 // import img3rd from "../../assets/img/display-pages/3rd.jpg";
 import { useState } from "react";
@@ -41,7 +41,7 @@ const GroupPage = () => {
                 title="Click to make this cover page"
                 className={`${isClicked ? "" : "display_img"}`}
                 onClick={appearPageClickHandler}
-                src={img1st}
+                src={groupPage1}
                 alt="Choose page"
               />
             </div>

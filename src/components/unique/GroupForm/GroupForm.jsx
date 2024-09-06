@@ -190,17 +190,18 @@ export const GroupForm = () => {
                 {/* your id: */}
                 <div className={inputParentClassName}>
                   <label>
-                    <span>Students Id:</span>
+                    <span>Students Id: <em className="text-blue-300 text-[15px]">Write student id separated by comma `,`</em></span>
                   </label>
                   <textarea
+                    title="Write Student Id separated by comma ','"
                     className={commonInputClassName}
                     required
                     {...register("studentIds")}
-                    placeholder="Type students id like: 19PAD030,19PAD035,19PAD020 ..."
+                    placeholder="Type students Id like: 19PAD030,19PAD035,19PAD020 ..."
                   ></textarea>{" "}
                 </div>
 
-                {/* student Departemnt name */}
+                {/* student Department name */}
                 <div className={inputParentClassName}>
                   <label>
                     <span>Department:</span>
