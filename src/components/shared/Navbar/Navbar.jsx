@@ -7,20 +7,25 @@ import ResponsiveMenu from "./ResponsiveMenu/ResponsiveMenu";
 
 export const links = [
   { id: 1, label: "Home", link: "/" },
-  { id: 1, label: "Single", link: "/single" },
-  { id: 1, label: "Group", link: "/group" },
-  { id: 1, label: "Tutorials", link: "/tutorials" },
+  { id: 2, label: "Single", link: "/single" },
+  { id: 3, label: "Group", link: "/group" },
+  { id: 4, label: "Tutorials", link: "/tutorials" },
 ];
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
   return (
     <>
-      <nav className=" bg-white py-3 sticky top-0 z-50 shadow-sm px-4 font-poppins">
+      <nav className="bg-white py-3 sticky top-0 z-50 shadow-sm px-4 font-poppins">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <button
-              className="text-3xl md:hidden flex"
+              className={`text-xl md:hidden flex p-1.5 rounded-full 
+              ${
+                isToggle
+                  ? "bg-gradient-to-r from-pink-400  to-indigo-400 text-white"
+                  : "bg-gradient-to-r from-indigo-400  to-pink-400 text-white"
+              }`}
               onClick={() => setIsToggle(!isToggle)}
             >
               {isToggle ? <RxCross2 /> : <IoMdMenu />}

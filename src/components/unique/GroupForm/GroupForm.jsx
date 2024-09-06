@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { CoverPage } from "./CoverPage";
 
-import { data } from "./../database/universitiesName";
-import Button from "./shared/Button/Button";
-import { scrollToBottom } from "./utilities/scrollToBottom";
-import useScrollToTop from "../hooks/useScrollToTop";
+import Button from "../../shared/Button/Button";
+import useScrollToTop from "./../../../hooks/useScrollToTop";
+import { scrollToBottom } from "./../../utilities/scrollToBottom";
+import { data } from "./../../../database/universitiesName";
+import { useForm } from "react-hook-form";
+import GroupCoverPage from "../GroupCoverPage/GroupCoverPage";
 const { universities, departments, ordinalNumbers, teacherTitles, sessions } =
   data;
 
@@ -12,22 +13,15 @@ const commonInputClassName =
   "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none";
 const inputParentClassName = "flex flex-col gap-1 text-lg mb-3";
 
-export const Form = ({ pageId }) => {
+export const GroupForm = () => {
   useScrollToTop();
-
-  const [pageData, setPageData] = useState([]);
+  const { register, handleSubmit } = useForm();
+  const [groupData, setGroupData] = useState({});
 
   // handel form submit:
-  const formSubmitHandler = (event) => {
-    event.preventDefault();
-
-    const formDatas = {};
-    const elements = [...event.target.elements];
-    elements.forEach((element) => {
-      formDatas[element.name] = element.value;
-      setPageData([formDatas]);
-    });
-
+  const formSubmitHandler = (data) => {
+    data.studentIds = data?.studentIds?.trim()?.split(",");
+    setGroupData(data);
     setTimeout(() => {
       scrollToBottom();
     }, 100);
@@ -35,8 +29,8 @@ export const Form = ({ pageId }) => {
 
   return (
     <>
-      <section className="container mx-auto px-4">
-        <form onSubmit={formSubmitHandler} action="">
+      <section className="container mx-auto px-4 ">
+        <form onSubmit={handleSubmit(formSubmitHandler)} action="">
           <div className="flex lg:flex-row flex-col gap-6">
             <div className="lg:flex-1 lg:w-6/12">
               <h2 className="italic underline font-semibold text-2xl text-center mb-2">
@@ -49,7 +43,7 @@ export const Form = ({ pageId }) => {
                 </label>
                 <select
                   className={`${commonInputClassName} py-2.5`}
-                  name="varsityName"
+                  {...register("varsityName")}
                   required
                 >
                   <option className="text-gray-400">Select your varsity</option>
@@ -63,6 +57,7 @@ export const Form = ({ pageId }) => {
                   ))}
                 </select>
               </div>
+
               {/* topic name */}
               <div className={inputParentClassName}>
                 <label>
@@ -72,7 +67,7 @@ export const Form = ({ pageId }) => {
                   required
                   type="text"
                   placeholder="Assignment title"
-                  name="assignmentTitle"
+                  {...register("assignmentTitle")}
                   className={commonInputClassName}
                 />
               </div>
@@ -85,7 +80,7 @@ export const Form = ({ pageId }) => {
                   required
                   type="text"
                   placeholder="Course Name"
-                  name="courseName"
+                  {...register("courseName")}
                   className={commonInputClassName}
                 />
               </div>
@@ -98,7 +93,7 @@ export const Form = ({ pageId }) => {
                   required
                   type="text"
                   placeholder="Course Code"
-                  name="courseCode"
+                  {...register("courseCode")}
                   className={commonInputClassName}
                 />
               </div>
@@ -109,7 +104,7 @@ export const Form = ({ pageId }) => {
                 </label>{" "}
                 <select
                   required
-                  name="year"
+                  {...register("year")}
                   className={`${commonInputClassName} py-2.5`}
                 >
                   <option className="color_gray">Year</option>
@@ -127,7 +122,7 @@ export const Form = ({ pageId }) => {
                 </label>{" "}
                 <select
                   required
-                  name="semester"
+                  {...register("semester")}
                   className={`${commonInputClassName} py-2.5`}
                 >
                   <option className="color_gray">Semester</option>
@@ -145,7 +140,7 @@ export const Form = ({ pageId }) => {
                 </label>{" "}
                 <select
                   required
-                  name="session"
+                  {...register("session")}
                   className={`${commonInputClassName} py-2.5`}
                 >
                   <option className="color_gray">Session</option>
@@ -164,7 +159,7 @@ export const Form = ({ pageId }) => {
                 <input
                   required
                   type="date"
-                  name="submissionDate"
+                  {...register("submissionDate")}
                   className={commonInputClassName}
                 />
               </div>
@@ -174,35 +169,35 @@ export const Form = ({ pageId }) => {
 
             <div className="lg:flex-1  lg:w-6/12 flex flex-col gap-6 justify-between">
               {/* Student information */}
-              <div>
+              <div className="">
                 <h2 className="italic underline font-semibold text-2xl text-center mb-2">
-                  Student Information:
+                  Students Information:
                 </h2>
-                {/* Student name */}
+                {/* Group Number */}
                 <div className={inputParentClassName}>
                   <label>
-                    <span>Student name:</span>
+                    <span>Group Number:</span>
                   </label>{" "}
                   <input
                     required
-                    type="text"
-                    placeholder="Student name"
-                    name="studentName"
+                    type="number"
+                    placeholder="Group Number"
+                    {...register("groupNumber")}
                     className={commonInputClassName}
                   />{" "}
                 </div>
+
                 {/* your id: */}
                 <div className={inputParentClassName}>
                   <label>
-                    <span>Student Id:</span>
+                    <span>Students Id:</span>
                   </label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="Student Id"
-                    name="studentId"
+                  <textarea
                     className={commonInputClassName}
-                  />{" "}
+                    required
+                    {...register("studentIds")}
+                    placeholder="Type students id like: 19PAD030,19PAD035,19PAD020 ..."
+                  ></textarea>{" "}
                 </div>
 
                 {/* student Departemnt name */}
@@ -213,7 +208,7 @@ export const Form = ({ pageId }) => {
                   <select
                     required
                     placeholder="Department name"
-                    name="studentDepartment"
+                    {...register("studentDepartment")}
                     className={`${commonInputClassName} py-2.5`}
                   >
                     <option className="color_gray">Your department</option>
@@ -239,7 +234,7 @@ export const Form = ({ pageId }) => {
                     required
                     type="text"
                     placeholder="Teacher name"
-                    name="teacherName"
+                    {...register("teacherName")}
                     className={commonInputClassName}
                   />{" "}
                 </div>
@@ -250,10 +245,10 @@ export const Form = ({ pageId }) => {
                   </label>
                   <select
                     required
-                    name="teacherTitle"
+                    {...register("teacherTitle")}
                     className={`${commonInputClassName} py-2.5`}
                   >
-                    <option className="color_gray">Teacher's title</option>
+                    <option className="text-gray-400">Teacher's title</option>
                     {teacherTitles.map((teacherTitle, index) => (
                       <option key={index} value={`${teacherTitle},`}>
                         {teacherTitle}
@@ -268,7 +263,7 @@ export const Form = ({ pageId }) => {
                   </label>{" "}
                   <select
                     required
-                    name="teacherDepartment"
+                    {...register("teacherDepartment")}
                     className={`${commonInputClassName} py-2.5`}
                   >
                     <option className="color_gray">Teacher's department</option>
@@ -286,7 +281,7 @@ export const Form = ({ pageId }) => {
           <div className="flex justify-center pt-5 pb-12">
             <Button customClass="text-lg md:py-3 py-2 md:px-6 shadow-lg flex items-center">
               <div className="w-5"></div>
-              {pageData.length > 0 ? "Update" : "Generate"}{" "}
+              {groupData?.teacherName ? "Update" : "Generate"}{" "}
               <div className="w-5"></div>
             </Button>
           </div>
@@ -294,9 +289,7 @@ export const Form = ({ pageId }) => {
       </section>
 
       {/* Send data to Page component */}
-      {pageData.map((item, index) => (
-        <CoverPage pageId={pageId} key={index} item={item} />
-      ))}
+      {groupData?.teacherName && <GroupCoverPage item={groupData} />}
     </>
   );
 };

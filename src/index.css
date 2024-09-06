@@ -32,6 +32,7 @@ body {
 }
 
 input:focus,
+textarea:focus,
 select:focus {
   box-shadow: rgba(1, 102, 214, 0.3) 0px 0px 0px 1.5px;
   border: 1px solid rgba(3, 102, 214, 0.3);

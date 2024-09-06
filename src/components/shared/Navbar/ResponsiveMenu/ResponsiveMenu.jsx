@@ -5,7 +5,7 @@ const ResponsiveMenu = ({ setIsToggle }) => {
   return (
     <nav
       onClick={() => setIsToggle(false)}
-      className={`font-poppins fixed w-full top-18 z-50 h-full bg-black bg-opacity-80 transition-transform md:hidden flex`}
+      className={`font-poppins fixed w-full top-18 z-50 h-full bg-black bg-opacity-20 transition-transform md:hidden flex`}
     >
       <ul
         onClick={(e) => e.stopPropagation()}

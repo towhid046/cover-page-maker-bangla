@@ -1,6 +1,7 @@
 import useScrollToTop from "../../hooks/useScrollToTop";
 import { Main } from "./../../components/Main";
 
+
 const SinglePage = () => {
   useScrollToTop()
   return (
