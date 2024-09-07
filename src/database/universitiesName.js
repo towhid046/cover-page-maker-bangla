@@ -166,7 +166,7 @@ const departments = [
   { name: "Statistics", sortName: "STAT" },
   { name: "Chemistry", sortName: "CHEM" },
   { name: "Physics", sortName: "PHYS" },
-  { name: "Environmental Science & Disaster Management", sortName: "ESDM" },
+  { name: "Environmental Science & Disaster Management", sortName: "ESD" },
   { name: "Pharmacy", sortName: "PHARM" },
   { name: "Biotechnology and Genetic Engineering", sortName: "BGE" },
   { name: "Biochemistry and Molecular Biology", sortName: "BMB" },

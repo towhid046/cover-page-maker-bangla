@@ -73,13 +73,13 @@ const TutorialsPage = () => {
       <Tutorial
         title="How to Generate a Single Cover Page?"
         steps={singlePageSteps}
-        videoId="PZ7lDrwYdZc"
+        videoId="r9WNlxEsNDo"
       />
 
       <Tutorial
         title="How to Generate a Group Cover Page?"
         steps={groupPageSteps}
-        videoId="E6588DlZW-c"
+        videoId="whlWA5Xa0q4"
       />
       <Feedback />
     </div>

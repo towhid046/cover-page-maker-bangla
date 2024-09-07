@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "./../../../components/shared/Button/Button";
 
 const commonInputClassName = "py-2 px-3 border border-blue-400 rounded-md focus:outline-none transition duration-300";
-const inputParentClassName = "flex flex-col gap-1 text-lg mb-4 ";
+const inputParentClassName = "flex flex-col gap-1  mb-4 ";
 
 const Feedback = () => {
   const {
