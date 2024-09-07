@@ -29,7 +29,7 @@ export const GroupForm = () => {
 
   return (
     <>
-      <section className="container mx-auto px-4 ">
+      <section className="container mx-auto ">
         <form onSubmit={handleSubmit(formSubmitHandler)} action="">
           <div className="flex lg:flex-row flex-col gap-6">
             <div className="lg:flex-1 lg:w-6/12">

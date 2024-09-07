@@ -12,7 +12,7 @@ const commonInputClassName =
   "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none";
 const inputParentClassName = "flex flex-col gap-1 text-lg mb-3";
 
-export const Form = ({ pageId }) => {
+const Form = ({ pageId }) => {
   useScrollToTop();
 
   const [pageData, setPageData] = useState([]);
@@ -300,3 +300,4 @@ export const Form = ({ pageId }) => {
     </>
   );
 };
+export default Form;

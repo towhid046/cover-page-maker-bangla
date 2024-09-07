@@ -29,11 +29,12 @@ const GroupPage = () => {
 
   return (
     <>
-      <div className="py-10">
+      <section className="pb-10 container mx-auto px-4">
+      <p className="lg:text-2xl text-xl font-medium bg-gradient-to-r  lg:py-2.5 py-2 my-2 lg:my-4 text-center from-indigo-400 via-purple-400 to-pink-400 text-white">{isClicked ? "Fill up the form & generate cover page" : "Choose a template"}</p>
         {isClicked ? (
           <GroupForm />
         ) : (
-          <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1  lg:px-0 px-4 container mx-auto">
+          <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1 ">
             {/* {imgs?.map((img, index) => ( */}
             <div></div>
             <div>
@@ -49,7 +50,7 @@ const GroupPage = () => {
             {/* ))} */}
           </div>
         )}
-      </div>
+      </section>
     </>
   );
 };

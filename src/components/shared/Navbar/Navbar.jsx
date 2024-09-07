@@ -16,8 +16,8 @@ const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
   return (
     <>
-      <nav className="bg-white py-3 sticky top-0 z-50 shadow-sm px-4 font-poppins">
-        <div className="container mx-auto flex justify-between items-center">
+      <nav className="bg-white py-3 sticky top-0 z-50 shadow-sm font-poppins">
+        <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center gap-2">
             <button
               className={`text-xl md:hidden flex p-1.5 rounded-full 

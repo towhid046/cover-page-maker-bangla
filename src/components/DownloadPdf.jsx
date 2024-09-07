@@ -42,7 +42,7 @@ const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {
       onClick={downloadPdfDocument}
       disabled={isDownloading}
     >
-      <span>{isDownloading ? "Downloading..." : "Download"}</span>{" "}
+      <span>{isDownloading ? "Downloading..." : "Download as PDF"}</span>{" "}
       <FaDownload />
     </button>
   );
