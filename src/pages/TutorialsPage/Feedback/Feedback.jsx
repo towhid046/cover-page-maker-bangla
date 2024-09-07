@@ -75,7 +75,7 @@ const Feedback = () => {
               <label>Message:</label>
               <textarea
                 {...register("message", { required: "Message is required" })}
-                rows="4"
+                rows="3"
                 placeholder="Your Message"
                 className={commonInputClassName}
               />

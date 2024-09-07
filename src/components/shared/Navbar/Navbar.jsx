@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
-import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import ResponsiveMenu from "./ResponsiveMenu/ResponsiveMenu";
+import useAuth from "./../../../hooks/useAuth";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const links = [
   { id: 1, label: "Home", link: "/" },
@@ -14,6 +16,18 @@ export const links = [
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { user, logOutUser } = useAuth();
+
+  const HandleLogOutUser = async () => {
+    try {
+      await logOutUser();
+      toast.success("Logout success!");
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <>
       <nav className="bg-white py-3 sticky top-0 z-50 shadow-sm font-poppins">
@@ -51,11 +65,45 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <div>
-            <Link to={"/login"}>
-              <Button>Login</Button>
-            </Link>
-          </div>
+
+          {user ? (
+            <div>
+              <button onClick={() => setIsOpen(true)}>
+                <img
+                  src={user?.photoURL}
+                  className="w-10 object-cover h-10 rounded-full border-2 hover:border-blue-200 transition duration-300"
+                  alt=""
+                />
+              </button>
+              {isOpen && (
+                <div
+                  onClick={() => setIsOpen(false)}
+                  className="fixed right-4 top-16 w-full min-h-screen"
+                >
+                  <ul
+                    onClick={(e) => e.stopPropagation()}
+                    className="bg-white shadow-md px-8 py-4 space-y-3 text-lg absolute right-0"
+                  >
+                    <li>Hi, {user?.displayName}</li>
+                    <li>
+                      <button
+                        onClick={HandleLogOutUser}
+                        className="w-full text-left text-red-400 hover:text-red-600 transition duration-300"
+                      >
+                        Log out
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div>
+              <Link to={"/login"}>
+                <Button>Login</Button>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
       {isToggle && <ResponsiveMenu setIsToggle={setIsToggle} />}

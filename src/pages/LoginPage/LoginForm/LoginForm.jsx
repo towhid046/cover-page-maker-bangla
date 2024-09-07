@@ -1,6 +1,9 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../../components/shared/Button/Button";
+import useAuth from "../../../hooks/useAuth";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const commonInputClassName =
   "py-2 px-3 border border-blue-400 rounded-md focus:outline-none transition duration-300";
@@ -8,10 +11,21 @@ const inputParentClassName = "flex flex-col gap-1 text-lg mb-3 ";
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
-
+  const { loginUser } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   // Handle form submission
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      await loginUser(data?.email, data?.password);
+      toast.success('Login success!')
+      navigate("/");
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -52,7 +66,7 @@ const LoginForm = () => {
       {/* Submit Button */}
       <div>
         <Button customClass="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-          Login
+          {isLoading ? "login..." : "Login"}
         </Button>
       </div>
     </form>
