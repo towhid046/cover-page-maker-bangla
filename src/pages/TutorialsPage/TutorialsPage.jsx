@@ -1,5 +1,6 @@
 import useScrollToTop from "./../../hooks/useScrollToTop";
 import Tutorial from "./Tutorial/Tutorial";
+import Feedback from "./Feedback/Feedback";
 
 const singlePageSteps = [
   {
@@ -80,6 +81,7 @@ const TutorialsPage = () => {
         steps={groupPageSteps}
         videoId="E6588DlZW-c"
       />
+      <Feedback />
     </div>
   );
 };

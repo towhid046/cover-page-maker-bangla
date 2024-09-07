@@ -9,7 +9,7 @@ const { universities, departments, ordinalNumbers, teacherTitles, sessions } =
   data;
 
 const commonInputClassName =
-  "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none";
+  "py-1.5 px-4 border border-blue-400 border-opacity-60 rounded-md focus:outline-none transition duration-300";
 const inputParentClassName = "flex flex-col gap-1 text-lg mb-3";
 
 const Form = ({ pageId }) => {
