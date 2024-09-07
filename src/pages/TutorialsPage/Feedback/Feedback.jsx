@@ -1,19 +1,38 @@
-
 import { useForm } from "react-hook-form";
 import Button from "./../../../components/shared/Button/Button";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useState } from "react";
 
-const commonInputClassName = "py-2 px-3 border border-blue-400 rounded-md focus:outline-none transition duration-300";
+const commonInputClassName =
+  "py-2 px-3 border border-blue-400 rounded-md focus:outline-none transition duration-300";
 const inputParentClassName = "flex flex-col gap-1  mb-4 ";
 
 const Feedback = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_SERVER_URL}/send-email`,
+        data
+      );
+      if (res?.status === 200) {
+        toast.success("Thanks for you feedback!!");
+        reset()
+      }
+    } catch (error) {
+      toast.error(error?.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -28,7 +47,9 @@ const Feedback = () => {
             Your Feedback is Important to Us!
           </h2>
           <p className="text-gray-600 mb-4">
-            We're eager to hear your feedback. Whether it's a suggestion, thought, or concern, please share it with us. Your input helps us improve our services.
+            We're eager to hear your feedback. Whether it's a suggestion,
+            thought, or concern, please share it with us. Your input helps us
+            improve our services.
           </p>
           <ul className="list-disc pl-5 text-gray-600">
             <li>Share your experiences and suggestions.</li>
@@ -49,7 +70,9 @@ const Feedback = () => {
                 placeholder="Your Name"
                 className={commonInputClassName}
               />
-              {errors.name && <span className="text-red-500">{errors.name.message}</span>}
+              {errors.name && (
+                <span className="text-red-500">{errors.name.message}</span>
+              )}
             </div>
 
             {/* Email */}
@@ -60,14 +83,16 @@ const Feedback = () => {
                   required: "Email is required",
                   pattern: {
                     value: /^\S+@\S+\.\S+$/,
-                    message: "Entered value does not match email format"
-                  }
+                    message: "Entered value does not match email format",
+                  },
                 })}
                 type="email"
                 placeholder="Your Email"
                 className={commonInputClassName}
               />
-              {errors.email && <span className="text-red-500">{errors.email.message}</span>}
+              {errors.email && (
+                <span className="text-red-500">{errors.email.message}</span>
+              )}
             </div>
 
             {/* Message */}
@@ -79,13 +104,15 @@ const Feedback = () => {
                 placeholder="Your Message"
                 className={commonInputClassName}
               />
-              {errors.message && <span className="text-red-500">{errors.message.message}</span>}
+              {errors.message && (
+                <span className="text-red-500">{errors.message.message}</span>
+              )}
             </div>
 
             {/* Submit Button */}
             <div>
               <Button customClass="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-                Send Feedback
+                {isLoading ? "Sending..." : "Send Feedback"}
               </Button>
             </div>
           </form>
