@@ -4,6 +4,7 @@ import groupPage1 from "../../assets/img/display-pages/group_page_1.jpg";
 // import img3rd from "../../assets/img/display-pages/3rd.jpg";
 import { useState } from "react";
 import { GroupForm } from "./../../components/unique/GroupForm/GroupForm";
+import Reveal from "./../../components/shared/Reveal/Reveal";
 
 const GroupPage = () => {
   useScrollToTop();
@@ -30,7 +31,11 @@ const GroupPage = () => {
   return (
     <>
       <section className="pb-10 container mx-auto px-4">
-      <p className="lg:text-2xl text-xl font-medium bg-gradient-to-r  lg:py-2.5 py-2 my-2 lg:my-4 text-center from-indigo-400 via-purple-400 to-pink-400 text-white">{isClicked ? "Fill up the form & generate cover page" : "Choose a template"}</p>
+        <p className="lg:text-2xl text-xl font-medium bg-gradient-to-r  lg:py-2.5 py-2 my-2 lg:my-4 text-center from-indigo-400 via-purple-400 to-pink-400 text-white">
+          {isClicked
+            ? "Fill up the form & generate cover page"
+            : "Choose a template"}
+        </p>
         {isClicked ? (
           <GroupForm />
         ) : (
@@ -38,13 +43,15 @@ const GroupPage = () => {
             {/* {imgs?.map((img, index) => ( */}
             <div></div>
             <div>
-              <img
-                title="Click to make this cover page"
-                className={`${isClicked ? "" : "display_img"}`}
-                onClick={appearPageClickHandler}
-                src={groupPage1}
-                alt="Choose page"
-              />
+              <Reveal>
+                <img
+                  title="Click to make this cover page"
+                  className={`${isClicked ? "" : "display_img"}`}
+                  onClick={appearPageClickHandler}
+                  src={groupPage1}
+                  alt="Choose page"
+                />
+              </Reveal>
             </div>
             <div></div>
             {/* ))} */}

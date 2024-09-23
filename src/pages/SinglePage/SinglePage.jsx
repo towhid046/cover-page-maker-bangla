@@ -12,6 +12,7 @@ import useAuth from "./../../hooks/useAuth";
 import Button from "./../../components/shared/Button/Button";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import Reveal from "./../../components/shared/Reveal/Reveal";
 
 const SinglePage = () => {
   useScrollToTop();
@@ -67,14 +68,16 @@ const SinglePage = () => {
           <>
             <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1 lg:grid-cols-2">
               {imgs?.map((img, index) => (
-                <img
-                  title="Click to make this cover page"
-                  className={`${isClicked ? "" : "display_img"}`}
-                  onClick={() => appearPageClickHandler(index)}
-                  key={index}
-                  src={img}
-                  alt="Choose page"
-                />
+                <Reveal key={index}>
+                  <img
+                    title="Click to make this cover page"
+                    className={`${isClicked ? "" : "display_img"}`}
+                    onClick={() => appearPageClickHandler(index)}
+                    key={index}
+                    src={img}
+                    alt="Choose page"
+                  />
+                </Reveal>
               ))}
             </div>
             <div className="text-center lg:pt-10 pt-8">
