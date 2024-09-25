@@ -6,6 +6,7 @@ import ResponsiveMenu from "./ResponsiveMenu/ResponsiveMenu";
 import useAuth from "./../../../hooks/useAuth";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { div } from "framer-motion/client";
 
 export const links = [
   { id: 1, label: "Home", link: "/" },
@@ -80,20 +81,22 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className="fixed right-4 top-16 w-full min-h-screen"
                 >
-                  <ul
-                    onClick={(e) => e.stopPropagation()}
-                    className="bg-white shadow-md px-8 py-4 space-y-3 text-lg absolute right-0"
-                  >
-                    <li>Hi, {user?.displayName}</li>
-                    <li>
-                      <button
-                        onClick={HandleLogOutUser}
-                        className="w-full text-left text-red-400 hover:text-red-600 transition duration-300"
-                      >
-                        Log out
-                      </button>
-                    </li>
-                  </ul>
+                  <div className="container mx-auto px-4 relative">
+                    <ul
+                      onClick={(e) => e.stopPropagation()}
+                      className="bg-white shadow-md px-8 py-4 space-y-3 text-lg absolute right-0"
+                    >
+                      <li>Hi, {user?.displayName}</li>
+                      <li>
+                        <button
+                          onClick={HandleLogOutUser}
+                          className="w-full text-left text-red-400 hover:text-red-600 transition duration-300"
+                        >
+                          Log out
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               )}
             </div>
