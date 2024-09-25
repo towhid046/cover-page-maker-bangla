@@ -13,6 +13,7 @@ import Button from "./../../components/shared/Button/Button";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import Reveal from "./../../components/shared/Reveal/Reveal";
+import PageHeader from "./../../components/shared/PageHeader/PageHeader";
 
 const SinglePage = () => {
   useScrollToTop();
@@ -55,44 +56,74 @@ const SinglePage = () => {
   };
 
   return (
-    <section className="pb-10 container mx-auto px-4">
-      <p className="lg:text-2xl text-xl font-medium bg-gradient-to-r  lg:py-2.5 py-2 my-2 lg:my-4 text-center from-indigo-400 via-purple-400 to-pink-400 text-white">
-        {isClicked
-          ? "Fill up the form & generate cover page"
-          : "Choose a template"}
-      </p>
-      <div>
-        {isClicked ? (
-          <Form pageId={pageId} />
-        ) : (
-          <>
-            <div className="grid xl:grid-cols-3 gap-5 cursor-pointer grid-cols-1 lg:grid-cols-2">
-              {imgs?.map((img, index) => (
-                <Reveal key={index}>
-                  <img
-                    title="Click to make this cover page"
-                    className={`${isClicked ? "" : "display_img"}`}
-                    onClick={() => appearPageClickHandler(index)}
-                    key={index}
-                    src={img}
-                    alt="Choose page"
-                  />
-                </Reveal>
-              ))}
-            </div>
-            <div className="text-center lg:pt-10 pt-8">
-              {user ? (
-                <h2 className="text-2xl italic font-semibold text-gray-400">
-                  More templates coming soon...
-                </h2>
-              ) : (
-                <Button clickHandler={handleGetMore}>Get More</Button>
-              )}
-            </div>
-          </>
-        )}
-      </div>
-    </section>
+    <>
+      <PageHeader isClicked={isClicked} />
+      <section className="pb-10 container mx-auto px-4">
+        <div>
+          {isClicked ? (
+            <Form pageId={pageId} />
+          ) : (
+            <>
+              <div className="grid xl:grid-cols-3 gap-4  grid-cols-1 lg:grid-cols-2">
+                {imgs?.map((img, index) => (
+                  <Reveal key={index}>
+                    <div className="relative group border border-gray-300 overflow-hidden">
+                      {/* Image with reduced blur effect */}
+                      <img
+                        title="Click to make this cover page"
+                        className={`transition duration-300 ease-in-out cursor-pointer filter blur-[0.5px] group-hover:blur-0 lg:group-hover:blur-0 lg:group-hover:scale-105 transform`}
+                        onClick={() => appearPageClickHandler(index)}
+                        src={img}
+                        alt="Choose page"
+                      />
+
+                      {/* Overlay with title and button */}
+                      <div
+                        onClick={() => appearPageClickHandler(index)}
+                        className="absolute inset-0 lg:flex hidden cursor-pointer flex-col justify-center items-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out"
+                      >
+                        <h3 className="text-white text-xl font-semibold mb-4">
+                          To make this cover page
+                        </h3>
+                        <Button
+                          clickHandler={() => appearPageClickHandler(index)}
+                        >
+                          Click Here
+                        </Button>
+                      </div>
+
+                      {/* Overlay for smaller screens */}
+                      <div
+                        onClick={() => appearPageClickHandler(index)}
+                        className="absolute inset-0 flex lg:hidden flex-col cursor-pointer justify-center items-center bg-black bg-opacity-50 opacity-100 transition duration-500 ease-in-out"
+                      >
+                        <h3 className="text-white text-xl font-semibold mb-4">
+                          To make this cover page
+                        </h3>
+                        <Button
+                          clickHandler={() => appearPageClickHandler(index)}
+                        >
+                          Click Here
+                        </Button>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+              <div className="text-center lg:pt-10 pt-8">
+                {user ? (
+                  <h2 className="text-2xl italic font-semibold text-gray-400">
+                    More templates coming soon...
+                  </h2>
+                ) : (
+                  <Button clickHandler={handleGetMore}>Get More</Button>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 
