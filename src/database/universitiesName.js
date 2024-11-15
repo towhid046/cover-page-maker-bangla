@@ -53,6 +53,7 @@ const departments = [
   { name: "Management Studies", sortName: "MGT" },
   { name: "Marketing", sortName: "MKT" },
   { name: "Mathematics", sortName: "MATH" },
+  { name: "Public Administration", sortName: "PAD" },
   { name: "Pharmacy", sortName: "PHR" },
   { name: "Physics", sortName: "PHY" },
   { name: "Political Science", sortName: "PS" },
