@@ -4,7 +4,7 @@ import GenericPdfDownloader from "./DownloadPdf";
 
 
 import sorterDepartment from "./utilities/sorterDepartment";
-import getUniShorterName from "./utilities/getUniShorterName";
+// import getUniShorterName from "./utilities/getUniShorterName";
 import { generateLogo } from './utilities/generateLogo';
 import { pages } from './utilities/pages';
 
@@ -19,7 +19,7 @@ export const CoverPage = ({ item, pageId }) => {
   const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
   // get university short name:
-  const uniShortName = getUniShorterName(item.varsityName);
+  // const uniShortName = getUniShorterName(item.varsityName);
 
   // render the page based on user clicked:
   const renderPage = (id) => {
@@ -31,7 +31,7 @@ export const CoverPage = ({ item, pageId }) => {
           logo={logo}
           studentSortDeptName={studentSortDeptName}
           teacherSortDeptName={teacherSortDeptName}
-          uniShortName={uniShortName}
+          // uniShortName={uniShortName}
         />
       );
     } else {

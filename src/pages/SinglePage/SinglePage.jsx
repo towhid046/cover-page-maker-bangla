@@ -21,7 +21,7 @@ const SinglePage = () => {
   const [pageId, setPageId] = useState(null);
   const { user } = useAuth();
   const navigate = useNavigate();
-  const imgs = [img1st, img2nd, img3rd, img4th, img5th, img6th];
+  const imgs = [img1st];
 
   function scrollToTop() {
     window.scrollTo({
@@ -64,7 +64,7 @@ const SinglePage = () => {
             <Form pageId={pageId} />
           ) : (
             <>
-              <div className="grid xl:grid-cols-3 gap-4  grid-cols-1 lg:grid-cols-2">
+              <div className="flex justify-center items-center md:w-[40%] mx-auto">
                 {imgs?.map((img, index) => (
                   <Reveal key={index}>
                     <div className="relative group border border-gray-300 overflow-hidden">
@@ -111,13 +111,13 @@ const SinglePage = () => {
                 ))}
               </div>
               <div className="text-center lg:pt-10 pt-8">
-                {user ? (
+                {/* {user ? (
                   <h2 className="text-2xl italic font-semibold text-gray-400">
                     More templates coming soon...
                   </h2>
                 ) : (
                   <Button clickHandler={handleGetMore}>Get More</Button>
-                )}
+                )} */}
               </div>
             </>
           )}

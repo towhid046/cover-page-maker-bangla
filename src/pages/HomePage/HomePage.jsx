@@ -1,7 +1,6 @@
 import Button from "../../components/shared/Button/Button";
 import { Link } from "react-router-dom";
 import useScrollToTop from "./../../hooks/useScrollToTop";
-import TutorialsPage from "./../TutorialsPage/TutorialsPage";
 import Reveal from "../../components/shared/Reveal/Reveal";
 
 const HomePage = () => {
@@ -25,15 +24,15 @@ const HomePage = () => {
                 Single Cover Page
               </Button>
             </Link>
-            <Link to={"/group"}>
+            {/* <Link to={"/group"}>
               <Button customClass="text-lg md:py-3 py-2 md:px-6 px-4 shadow-lg">
                 Group Cover Page
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </Reveal>
       </div>
-      <TutorialsPage />
+      {/* <TutorialsPage /> */}
     </>
   );
 };

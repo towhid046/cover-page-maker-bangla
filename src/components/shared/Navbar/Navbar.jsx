@@ -6,13 +6,12 @@ import ResponsiveMenu from "./ResponsiveMenu/ResponsiveMenu";
 import useAuth from "./../../../hooks/useAuth";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { div } from "framer-motion/client";
 
 export const links = [
   { id: 1, label: "Home", link: "/" },
   { id: 2, label: "Single", link: "/single" },
-  { id: 3, label: "Group", link: "/group" },
-  { id: 4, label: "Tutorials", link: "/tutorials" },
+  // { id: 3, label: "Group", link: "/group" },
+  // { id: 4, label: "Tutorials", link: "/tutorials" },
 ];
 
 const Navbar = () => {

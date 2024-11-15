@@ -4,7 +4,7 @@ import '../../../../src/index.css';
 import GroupPage1 from "./../../../pages/GroupPage/GroupPage1/GroupPage1";
 import GenericPdfDownloader from './../../DownloadPdf';
 import sorterDepartment from './../../utilities/sorterDepartment';
-import getUniShorterName from './../../utilities/getUniShorterName';
+// import getUniShorterName from './../../utilities/getUniShorterName';
 import { generateLogo } from './../../utilities/generateLogo';
 import { pages } from './../../utilities/pages';
 
@@ -18,7 +18,7 @@ const GroupCoverPage = ({ item }) => {
   const teacherSortDeptName = sorterDepartment(item.teacherDepartment);
 
   // get university short name:
-  const uniShortName = getUniShorterName(item.varsityName);
+  // const uniShortName = getUniShorterName(item.varsityName);
 
   // render the page based on user clicked:
   const renderPage = (id) => {
@@ -30,7 +30,6 @@ const GroupCoverPage = ({ item }) => {
           logo={logo}
           studentSortDeptName={studentSortDeptName}
           teacherSortDeptName={teacherSortDeptName}
-          uniShortName={uniShortName}
         />
       );
     } else {
@@ -51,7 +50,6 @@ const GroupCoverPage = ({ item }) => {
             logo={logo}
             studentSortDeptName={studentSortDeptName}
             teacherSortDeptName={teacherSortDeptName}
-            uniShortName={uniShortName}
           />
         </div>
       </div>

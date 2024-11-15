@@ -56,9 +56,9 @@ const Form = ({ pageId }) => {
                   {universities.map((varsity, index) => (
                     <option
                       key={index}
-                      value={`${varsity.name}, ${varsity.location}- ${varsity.zipCode}`}
+                      value={`${varsity.name}, ${varsity.location}- ${varsity.zipCodeBn}`}
                     >
-                      {varsity.name}, {varsity.location}-{varsity.zipCode}
+                      {varsity.name}, {varsity.location}-{varsity.zipCodeBn}
                     </option>
                   ))}
                 </select>
@@ -138,7 +138,7 @@ const Form = ({ pageId }) => {
                   ))}
                 </select>
               </div>
-              {/* semester */}
+              {/* session */}
               <div className={inputParentClassName}>
                 <label>
                   <span>Session:</span>
