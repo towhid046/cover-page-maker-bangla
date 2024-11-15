@@ -194,18 +194,19 @@ const teacherTitles = [
   "Lecturer",
   "Assistant Professor",
   "Associate Professor",
+  'Professor'
 ];
 
 const ordinalNumbers = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"];
 
+const year = new Date().getFullYear()
 const sessions = [
-  "2017-2018",
-  "2018-2019",
-  "2019-2020",
-  "2020-2021",
-  "2021-2022",
-  "2022-2023",
-  "2023-2024",
+  `${year-6} - ${year-5}`,
+  `${year-5} - ${year-4}`,
+  `${year-4} - ${year-3}`,
+  `${year-3} - ${year-2}`,
+  `${year-2} - ${year-1}`,
+  `${year-1} - ${year}`,
 ];
 
 export const data = {
